@@ -1,0 +1,10 @@
+﻿d:\PY\PORT>main.py
+Enter your commands below.
+Insert "exit" to leave the application.
+>> at
+>>аа†Ђ
+>> ath
+>>аюаЂ
+>> atz
+>>аюшЂ
+>>
