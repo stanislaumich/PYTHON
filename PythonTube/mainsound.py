@@ -4,8 +4,11 @@ from aiogram import *
 import os
 from pytube import YouTube
 
-
-bot = Bot("5706031236:AAGoV6JWqK3jwNsE0EsS8keHXqCREpIYtAk")
+f = open('s:/youtubesound.bot', 'r')
+for line in f:
+	s = line
+f.close()
+bot = Bot(s)
 dp = Dispatcher(bot)
 
 def remove(value, deletechars):

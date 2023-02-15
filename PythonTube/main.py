@@ -4,8 +4,11 @@ from aiogram import *
 import os
 from pytube import YouTube
 
-
-bot = Bot("5746153528:AAEe7LThBESKsgCqJlkBY0SrLMakLlZVrsY")
+f = open('s:/youtube.bot', 'r')
+for line in f:
+	s = line
+f.close()
+bot = Bot(s)
 dp = Dispatcher(bot)
 
 @dp.message_handler(commands=["start"])
