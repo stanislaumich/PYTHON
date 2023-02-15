@@ -4,6 +4,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
+from datetime import date
 import datetime
 
 #from selenium import webelement
@@ -24,19 +25,18 @@ def main():
     element = driver.find_element(By.CLASS_NAME, "sign_in")
     element.click()
     element = driver.find_element("name", "email")
-    element.send_keys("asdfg")
+    element.send_keys("StasLz42tas@gmail.com")
     element = driver.find_element("name", "password")
-    element.send_keys("asdfg")
+    element.send_keys("CrazyDog")
     element = driver.find_element(By.CLASS_NAME, "submit_by_ajax_completed")
     element.submit()
-    time.sleep(30)
-    with open("page.html", "w", encoding="utf-8") as file:
+    time.sleep(3)
+    driver.get("https://g1.botva.ru/clan_members.php?id=21148")
+    now = date.today()
+    s = str(now.day)+"." + str(now.month)+"." + str(now.year)
+    with open(s+"_KLAN.html", "w", encoding="utf-8") as file:
         file.write(driver.page_source)
-    #element = driver.findElement(By.id("quick_login_button"));
-    #element.click();
-    #Thread.sleep(1000);
-    #element = driver.findElement(By.id("l_msg")); //.id("l_msg"), .xpath(".//*[@id='l_msg']/a")
-    #element.click();
+
 
 if __name__ == "__main__":
     main()
