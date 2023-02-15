@@ -20,11 +20,11 @@ def main():
     driver = webdriver.Chrome()
     driver.get("http://botva.ru")
     #class="sign_in"
-    element = driver.find_element("css selector", "sign_in")
+    element = driver.find_element("class", "sign_in")
     element.click()
     element = driver.find_element("name", "email")
     element.sendKeys("Ваш логин")
-    element = driver.find_element("name","password")
+    element = driver.find_element("name", "password")
     element.sendKeys("Ваш пароль")
     #element = driver.findElement(By.id("quick_login_button"));
     #element.click();
