@@ -2,6 +2,10 @@
 
 #from selenium import NoSuchElementException
 from selenium import webdriver
+from selenium.webdriver.common.by import By
+import time
+import datetime
+
 #from selenium import webelement
 #from selenium import FirefoxDriver
 #from selenium import firefox.FirefoxProfile
@@ -15,17 +19,19 @@ from selenium import webdriver
 
 
 def main():
-    #ProfilesIni profiles = new ProfilesIni();
-    #FirefoxProfile myprofile = profiles.getProfile("TestQA");
     driver = webdriver.Chrome()
     driver.get("http://botva.ru")
-    #class="sign_in"
-    element = driver.find_element("class", "sign_in")
+    element = driver.find_element(By.CLASS_NAME, "sign_in")
     element.click()
     element = driver.find_element("name", "email")
-    element.sendKeys("Ваш логин")
+    element.send_keys("asdfg")
     element = driver.find_element("name", "password")
-    element.sendKeys("Ваш пароль")
+    element.send_keys("asdfg")
+    element = driver.find_element(By.CLASS_NAME, "submit_by_ajax_completed")
+    element.submit()
+    time.sleep(30)
+    with open("page.html", "w", encoding="utf-8") as file:
+        file.write(driver.page_source)
     #element = driver.findElement(By.id("quick_login_button"));
     #element.click();
     #Thread.sleep(1000);
