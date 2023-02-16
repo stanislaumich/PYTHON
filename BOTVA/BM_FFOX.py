@@ -1,11 +1,28 @@
+from time import sleep
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import time
+from datetime import time
 from datetime import date
-import datetime
+from datetime import datetime
+#import datetime
+import sqlite3
 
 
 def main():
+    con = sqlite3.connect("BM.sqlite")
+    cursor = con.cursor()
+    cursor.execute("""CREATE TABLE IF NOT EXISTS KLAN
+                    (id INTEGER PRIMARY KEY AUTOINCREMENT,  
+                    nik TEXT, 
+                    bm  text,
+                    sl  text,
+                    dt  text,
+                    tm  text,
+                    dop text)""")
+    nw = datetime.now()
+    dt = nw.strftime("%d.%m.%Y")
+    tm = nw.strftime("%I:%M")
     driver = webdriver.Chrome()
     driver.get("http://botva.ru")
     element = driver.find_element(By.CLASS_NAME, "sign_in")
@@ -16,9 +33,9 @@ def main():
     element.send_keys("CrazyDog")
     element = driver.find_element(By.CLASS_NAME, "submit_by_ajax_completed")
     element.submit()
-    time.sleep(3)
+    sleep(3)
     driver.get("https://g1.botva.ru/clan_members.php?id=21148")
-    time.sleep(3)
+    sleep(3)
     now = date.today()
     ds = str(now.day)+"." + str(now.month)+"." + str(now.year)
     with open(ds+"_KLAN.html", "w", encoding="utf-8") as file:
@@ -32,6 +49,14 @@ def main():
         print(bm)
         sl = el.find_element(By.CLASS_NAME, "nowrapi").text
         print(sl)
+        #dt = ""
+        #tm = ""
+        bob = (nik, bm, sl, dt, tm)
+        cursor.execute("INSERT INTO KLAN (nik, bm, sl, dt, tm) VALUES (?, ?, ?, ?, ?)", bob)
+        #people = [("Sam", 28), ("Alice", 33), ("Kate", 25)]
+        #cursor.executemany("INSERT INTO people (name, age) VALUES (?, ?)", people)
+
+    con.commit()
         #ts = el.text
         #ar = ts.split(" ")
         #ar[2] = ar[2].replace('.', '')
