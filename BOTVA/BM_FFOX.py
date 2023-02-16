@@ -1,22 +1,8 @@
-#from selenium import Alert
-
-#from selenium import NoSuchElementException
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import time
 from datetime import date
 import datetime
-
-#from selenium import webelement
-#from selenium import FirefoxDriver
-#from selenium import firefox.FirefoxProfile
-#from selenium import firefox.internal.ProfilesIni
-#from selenium import security.UserAndPassword
-#from selenium import support.ui.ExpectedConditions
-#from selenium import support.ui.WebDriverWait
-
-#from selenium import selenium.DefaultSelenium
-#from selenium import selenium.Selenium
 
 
 def main():
