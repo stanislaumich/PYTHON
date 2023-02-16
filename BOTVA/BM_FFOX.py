@@ -49,10 +49,10 @@ def main():
         print(bm)
         sl = el.find_element(By.CLASS_NAME, "nowrapi").text
         print(sl)
-        #dt = ""
-        #tm = ""
-        bob = (nik, bm, sl, dt, tm)
-        cursor.execute("INSERT INTO KLAN (nik, bm, sl, dt, tm) VALUES (?, ?, ?, ?, ?)", bob)
+        zv = el.find_element(By.CLASS_NAME, "pl5").text
+        print(zv)
+        bob = (nik, bm, sl, dt, tm, zv)
+        cursor.execute("INSERT INTO KLAN (nik, bm, sl, dt, tm, dop) VALUES (?, ?, ?, ?, ?, ?)", bob)
         #people = [("Sam", 28), ("Alice", 33), ("Kate", 25)]
         #cursor.executemany("INSERT INTO people (name, age) VALUES (?, ?)", people)
 
