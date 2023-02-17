@@ -1,3 +1,12 @@
+'''
+Есть
+список воинов клана на дату
+походы в подзем на дату и номер с лотереей
+казна на дату
+
+надо
+выполнение КЗ
+'''
 from time import sleep
 import os
 import sys
@@ -35,6 +44,9 @@ def main():
                     dop text)""")
     cursor.execute("""CREATE TABLE IF NOT EXISTS podzem (dt VARCHAR (50), num INTEGER, nik VARCHAR2 (50), 
     id  INTEGER, val VARCHAR2 (1000))""")
+    cursor.execute("""CREATE TABLE IF NOT EXISTS kazna (dt VARCHAR(30), nik VARCHAR(100), gold VARCHAR(30),
+    pirah VARCHAR(30), kri VARCHAR(30))""")
+
     nw = datetime.now()
     dt = nw.strftime("%d.%m.%Y")
     tm = nw.strftime("%I-%M")
@@ -147,30 +159,25 @@ def main():
     '''
     # ОБРАБОТКА КАЗНЫ
     driver.get("https://g1.botva.ru/clan_mod.php?m=treasury")
+    # получим все строки таблицы
     flk = []
-    elements = driver.find_elements("xpath", '//td[contains(@class, "p3 bordert borderr")]')
-    #elements = driver.find_elements(By.CLASS_NAME, "p3 bordert borderr")
-    for elk in elements:
-        print(elk)#.text
-        '''
-        nik = el.find_element(By.CLASS_NAME, "profile ").text
+    r = driver.find_elements("xpath", "//table[@id='treasury_givements_table2']/tbody/tr")
+    for s in r:
+        t = s.text
+        arr = t.split("\n")
+        nik = arr[0]
+        p = arr[1].split(" ")
+        gold = p[0].replace(".", "")
+        kri = p[1].replace(".", "")
+        pirah = p[2].replace(".", "")
         print(nik)
-        gold = el.find_element(By.CLASS_NAME, "right").text
-        gold = gold.replace(".", "")
         print(gold)
-        pirah = el.find_element(By.CLASS_NAME, "nowrapi").text
-        pirah = pirah.replace(".", "")
-        print(pirah)
-        kri = el.find_element(By.CLASS_NAME, "pl5").text
-        kri = kri.replace(".", "")
         print(kri)
-        bob = (dt,nik,gold,pirah,kri)
+        print(pirah)
+        bob = (dt, nik, gold, pirah, kri)
         flk.append(bob)
-        '''
-    '''    
-    cursor.executemany("INSERT INTO kazna (dt,nik,gold,pirah,kri)VALUES (?,?,?,?,?), flk)
+    cursor.executemany("INSERT INTO kazna (dt,nik,gold,pirah,kri)VALUES (?,?,?,?,?)", flk)
     con.commit()
-    '''
 
 
 
