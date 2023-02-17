@@ -1,0 +1,39 @@
+.monsterpve1{background:url(/images/m/monsterpve/gates.png);width:180px;height:180px;float:left;margin:0px
+5px 0 0}.monsterpve1.r15{background:url(/images/m/monsterpve/gate_01.png)}.monsterpve1.r16{background:url(/images/m/monsterpve/gate_02.png)}.monsterpve1.r17{background:url(/images/m/monsterpve/gate_03.png)}.monsterpve1.r18{background:url(/images/m/monsterpve/gate_04.png)}.monsterpve1.r19{background:url(/images/m/monsterpve/gate_05.png)}.monsterpve2{float:left;width:330px;padding:0px;margin:5px;margin-left:10px;text-align:center}.monsterpve2
+p{margin-bottom:15px}P.infomonster{background:#DBCBAD;height:25px;line-height:25px;padding-left:10px;margin-bottom:10px}.sumstat{float:left;width:102px;background:#dfcfb2;margin:0px
+0px 10px 5px;text-align:center;padding:5px
+0}.sumstat:first-child{margin-left:0px;width:106px}.sumstat
+.font_brown{line-height:20px}DIV.members{margin-right:-5px;position:relative}DIV.members
+div.member{width:97px;float:left;background:#dfcfb2;height:30px;line-height:30px;margin:0
+5px 10px 0;padding-left:5px;position:relative;white-space:nowrap}DIV.members div.member
+b.icon2{margin:0
+-2px}div.members .small_popupLong
+.text{text-align:left !important;margin-left:10px !important}div.members .small_popupLong
+.stat{margin-right:0 !important}DIV.members
+.stat{float:left;width:39px;text-align:center !important;margin-right:4px}DIV.members .stat
+B{display:block;margin:0
+auto}DIV.members
+hr{border:1px
+solid #e2d4b7;padding:0;clear:both;margin-right:20px}.monsterimg{width:80px;height:80px;display:inline-block;background:url(/images/m/monsterpve/monsters.png)}.monsterimg.ny{background:url(/images/m/monsterpve/monsters_ny.png)}.monsterimg.monster_1{background-position:0px 0px}.monsterimg.monster_2{background-position:-80px 0px}.monsterimg.monster_3{background-position:-160px 0px}.monsterimg.monster_4{background-position:-240px 0px}.monsterimg.monster_5{background-position:-320px 0px}.monsterimg.monster_6{background-position:-400px 0px}.monsterimg.monster_7{background-position:0px -80px}.monsterimg.monster_8{background-position:-80px -80px}.monsterimg.monster_9{background-position:-160px -80px}.monsterimg.monster_10{background-position:-240px -80px}.monsterimg.monster_11{background-position:-320px -80px}.monsterimg.monster_12{background-position:-400px -80px}.monsterimg.monster_13{background-position:0px -160px}.monsterimg.monster_14{background-position:-80px -160px}.monsterimg.monster_15{background-position:-160px -160px}.monsterimg.monster_16{background-position:-240px -160px}.monsterimg.monster_17{background-position:-320px -160px}.monsterimg.monster_18{background-position:-400px -160px}.monsterimg.monster_19{background-position:0px -240px}.monsterimg.monster_20{background-position:-80px -240px}.monsterimg.monster_21{background-position:-160px -240px}.monsterimg.monster_22{background-position:-240px -240px}.monsterimg.monster_23{background-position:-320px -240px}.monsterimg.monster_24{background-position:-400px -240px}.monsterimg.monster_25{background-position:-80px -320px}.monsterimg.monster_26{background-position:-160px -320px}.monsterimg.monster_27{background-position:-240px -320px}.monsterimg.monster_28{background-position:-240px -320px}.monsterimg.monster_29{background-position:-320px -320px}.monsterimg.monster_30{background-position:-400px -320px}.monsterimg.monster_31{background-position:0px -400px}.monsterimg.monster_32{background-position:-80px -400px}.monsterimg.monster_33{background-position:-160px -400px}.monsterimg.monster_34{background-position:-240px -400px}.monsterimg.monster_35{background-position:-320px -400px}.monsterimg.monster_36{background-position:-400px -400px}DIV.log_half.left_side{margin-right:24px}DIV.log_half{width:265px;float:left;margin-top:10px}DIV.log_half
+TABLE{width:100%;font-weight:bold}DIV.log_half TABLE TR TD:nth-child(1){text-align:right}DIV.log_half TABLE TR TD:nth-child(3){text-align:left}TABLE.results{width:100%;border-collapse:collapse;margin-bottom:10px}TABLE.results THEAD
+TR{line-height:20px}TABLE.results TBODY
+TR{background:#dfcfb2;margin-bottom:4px;line-height:30px;border-bottom:3px solid #e3d4b7}TABLE.results TR td:nth-child(1){padding-left:5px}TABLE.results TR td:nth-child(3){padding-right:5px}TABLE.results TR td:nth-child(2),
+TABLE.results TR td:nth-child(3){text-align:right;width:150px;font-weight:bold}TABLE.results TR th:nth-child(2),
+TABLE.results TR th:nth-child(3){text-align:right;width:130px;font-weight:normal;padding-right:20px}TABLE.results
+.damage{width:100px}DIV.avatar_holder{margin:0
+auto 10px;width:190px}DIV.avatar_holder
+.people{width:100%;-webkit-border-bottom-right-radius:3px;-webkit-border-bottom-left-radius:3px;-moz-border-radius-bottomright:3px;-moz-border-radius-bottomleft:3px;border-bottom-right-radius:3px;border-bottom-left-radius:3px;background:#bbcd5f;line-height:30px;text-align:Center;font-weight:bold}DIV.avatar_holder
+DIV.wins{background:url(/images/m/monsterpve/win_light.png) no-repeat -1px;width:188px;height:238px;position:absolute;border:1px
+solid #bbcd5f}DIV.avatar_holder.win_0
+.people{background:#f6967e}DIV.avatar_holder.win_0
+DIV.wins{background-position:-191px;border-color:#f6967e}DIV.loot{line-height:30px}DIV.loot
+DIV.row{text-align:center;background:#dfd0b3;margin-bottom:10px}DIV.loot .row .item,
+DIV.loot .row span.avatar,
+DIV.loot .row
+.name{line-height:60px;vertical-align:middle;display:inline-block;height:60px;position:relative}DIV.loot .row
+.name{width:200px}DIV.loot .row
+span.avatar{vertical-align:top}DIV.loot .row span.avatar
+.avatar{margin:10px
+0}.ico_wiki{float:right;margin-top:5px}.round_block_header_cont{padding-top:10px;padding-bottom:10px}DIV.monster_map{background:url(/images/monster/Monster_map.jpg) no-repeat;width:504px;height:610px}.members .member
+i{position:absolute;top:-5px;left:26px;font-style:normal;font-weight:bold;font-size:10px;color:#3fa825;line-height:16px}.members .member i
+b{position:absolute;top:0px}
