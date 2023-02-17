@@ -1,1 +1,1 @@
-pip install bs4 requests selenium lxml
+pip install bs4 requests selenium lxml pyinstaller
