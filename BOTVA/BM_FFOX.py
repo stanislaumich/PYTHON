@@ -4,24 +4,17 @@
 походы в подзем на дату и номер с лотереей
 
  -- казна на дату - совместима с ботвой дельфи и проверена
+ -- выполнение КЗ - совместимо с ботвой
 
-надо
-выполнение КЗ
 '''
 from time import sleep
 import os
-import sys
-from selenium import webdriver
 from selenium.webdriver.common.by import By
-from datetime import time
-from datetime import date
 from datetime import datetime
 import configparser
 import sqlite3
 from selenium import webdriver
 from bs4 import BeautifulSoup
-import re
-from html import unescape
 ''''''
 
 def main():
