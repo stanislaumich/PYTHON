@@ -18,6 +18,7 @@ from bs4 import BeautifulSoup
 ''''''
 
 N = 5
+pause = 4
 def main():
     print("[INFO]Нужно помнить что нахождение в некоторых локациях, например подзем, не дает обработать казну")
     config = configparser.ConfigParser()  # создаём объекта парсера
@@ -53,7 +54,7 @@ def main():
     sleep(3)
     for i in range(1, N + 1):
     m = driver.find_element(By.CLASS_NAME, "button_new").click()
-    sleep(4)
+    sleep(pause)
     print(i)
 
 if __name__ == "__main__":
