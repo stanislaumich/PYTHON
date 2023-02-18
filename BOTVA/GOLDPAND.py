@@ -17,6 +17,7 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 ''''''
 
+N = 5
 def main():
     print("[INFO]Нужно помнить что нахождение в некоторых локациях, например подзем, не дает обработать казну")
     config = configparser.ConfigParser()  # создаём объекта парсера
@@ -50,7 +51,7 @@ def main():
     sleep(3)
     driver.get("https://g1.botva.ru/index.php?pandora=253233098&type=gold")
     sleep(3)
-    for i in range(1, 10):
+    for i in range(1, N + 1):
     m = driver.find_element(By.CLASS_NAME, "button_new").click()
     sleep(4)
     print(i)
