@@ -45,7 +45,7 @@ def main():
     m = driver.find_element(By.CLASS_NAME, "button_new")
     m.click()
     sleep(pause)
-    m = driver.find_element(By.CLASS_NAME, "button_new")
+    ##m = driver.find_element(By.CLASS_NAME, "button_new")
     m.click()
     sleep(pause)
     '''
