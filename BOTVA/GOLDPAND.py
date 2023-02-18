@@ -9,7 +9,7 @@ from selenium import webdriver
 # количество панд для открытия
 N = 5
 # пауза между открытиями
-pause = 4
+pause = 6
 def main():
     config = configparser.ConfigParser()  # создаём объекта парсера
     config.read("config.ini")  # читаем конфиг
@@ -42,17 +42,14 @@ def main():
     sleep(3)
     driver.get("https://g1.botva.ru/index.php?pandora=253233098&type=gold")
     sleep(3)
-    m = driver.find_element(By.CLASS_NAME, "button_new")
+    m = driver.find_element(By.CLASS_NAME, "modlunar")
     m.click()
+    print(1)
     sleep(pause)
-    ##m = driver.find_element(By.CLASS_NAME, "button_new")
-    m.click()
-    sleep(pause)
-    '''
-    for i in range(1, N):
-        j = driver.find_element(By.CLASS_NAME, "button_new").click()
+    for i in range(2, N + 1):
+        m.click()
         sleep(pause)
         print(i)
-    '''
+
 if __name__ == "__main__":
     main()
