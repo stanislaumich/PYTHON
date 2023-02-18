@@ -2,7 +2,8 @@
 Есть
 список воинов клана на дату
 походы в подзем на дату и номер с лотереей
-казна на дату
+
+ -- казна на дату - совместима с ботвой дельфи и проверена
 
 надо
 выполнение КЗ
@@ -18,20 +19,25 @@ from datetime import datetime
 import configparser
 import sqlite3
 from selenium import webdriver
+from bs4 import BeautifulSoup
+import re
+from html import unescape
 ''''''
 
 def main():
+    print("[INFO]Нужно помнить что нахождение в некоторых локациях, например подзем, не дает обработать казну")
     config = configparser.ConfigParser()  # создаём объекта парсера
     config.read("config.ini")  # читаем конфиг
     basepath = config["PATH"]["workdir"]
     try:
         os.mkdir(basepath)
     except:
-        print("Путь существовал")
+        print("Проверка рабочей папки")
     finally:
-        print("Создаем и открываем базу данных")
+        print(" ")
     base = config["PATH"]["base"]
-    print(base)
+    print("Создаем и открываем базу данных: "+base)
+    #print(base)
     con = sqlite3.connect(base)
     cursor = con.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS KLAN
@@ -46,23 +52,26 @@ def main():
     id  INTEGER, val VARCHAR2 (1000))""")
     cursor.execute("""CREATE TABLE IF NOT EXISTS kazna (dt VARCHAR(30), nik VARCHAR(100), gold VARCHAR(30),
     pirah VARCHAR(30), kri VARCHAR(30))""")
+    cursor.execute("""CREATE TABLE IF NOT EXISTS zad(id INTEGER PRIMARY KEY AUTOINCREMENT, dt VARCHAR(30),
+    tip INTEGER, nik VARCHAR(300), val INTEGER)""")
+
 
     nw = datetime.now()
     dt = nw.strftime("%d.%m.%Y")
     tm = nw.strftime("%I-%M")
-    print("Создаем и открываем базу данных")
+    print("База данных - Ok")
     #sys.exit()
 
     #driver = webdriver.Chrome()
     myp = os.path.dirname(os.path.realpath(__file__)) + "\SELENIUM"
-    print(myp)
+    print("Путь профиля Chrome: "+myp)
     options = webdriver.ChromeOptions()
     options.add_argument("--allow-profiles-outside-user-dir")
     options.add_argument(r"user-data-dir="+myp)
     options.add_argument("--profile-directory=BOTVA")
 
     driver = webdriver.Chrome(chrome_options=options)
-
+    print("Логин...  ")
     driver.get("http://botva.ru")
     element = driver.find_element(By.CLASS_NAME, "sign_in")
     element.click()
@@ -81,7 +90,7 @@ def main():
     #ds = str(now.day)+"." + str(now.month)+"." + str(now.year)
     #with open(dt+"_"+tm+"_KLAN.html", "w", encoding="utf-8") as file:
     #    file.write(driver.page_source)
-
+    print("Обработка БМ")
     fl = []
     elements = driver.find_elements("xpath", '//tr[contains(@class, "row_")]')
     for el in elements:
@@ -99,6 +108,7 @@ def main():
     con.commit()
 
     # пробуем работать со списком походов в подзем
+    print("Обработка подзема")
     f1 = open('podzem.txt')
     flist = f1.readlines()
     for el in flist:
@@ -157,7 +167,9 @@ def main():
             cursor.execute(sql_select_query, on)
             con.commit()
     '''
+    '''
     # ОБРАБОТКА КАЗНЫ
+    print("Обработка казны")
     driver.get("https://g1.botva.ru/clan_mod.php?m=treasury")
     # получим все строки таблицы
     flk = []
@@ -178,6 +190,44 @@ def main():
         flk.append(bob)
     cursor.executemany("INSERT INTO kazna (dt,nik,gold,pirah,kri)VALUES (?,?,?,?,?)", flk)
     con.commit()
+    '''
+    # ОБРАБОТКА КЛАНОВОГО ЗАДАНИЯ
+    print("Обработка кланового задания")
+    driver.get("https://g1.botva.ru/clan_mod.php?m=task")
+    '''
+    zd = driver.find_elements(By.CLASS_NAME, "mb5")
+    zdn = zd[1].text
+    print("Задание: " + zdn)
+    '''
+    html = driver.page_source
+    sleep(2)
+    flz = []
+    bs = BeautifulSoup(html, "lxml")
+    tb = bs.find(class_="default profile_statistic")
+    tr = tb.find_all("tr")
+    for e in tr:
+        tnik = e.find(class_="borderr").find("a")
+        try:
+            nik = tnik.text
+        except:
+            nik = ""
+        finally:
+            nik = nik
+        plr = e.find(class_="center")
+        try:
+            pl = plr.text
+        except:
+            pl = ""
+        finally:
+            pl = pl
+        if nik != "":
+            bob = (dt, 1, nik, pl)
+            flz.append(bob)
+        print(nik)
+        print(pl)
+    cursor.executemany("INSERT INTO zad (dt,tip,nik,val)VALUES(?,?,?,?)", flz)
+    con.commit()
+
 
 
 
