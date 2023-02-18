@@ -1,26 +1,16 @@
 '''
-Есть
-список воинов клана на дату
-походы в подзем на дату и номер с лотереей
-
- -- казна на дату - совместима с ботвой дельфи и проверена
- -- выполнение КЗ - совместимо с ботвой
-
 '''
 from time import sleep
 import os
 from selenium.webdriver.common.by import By
-from datetime import datetime
 import configparser
-import sqlite3
 from selenium import webdriver
-from bs4 import BeautifulSoup
 ''''''
-
+# количество панд для открытия
 N = 5
+# пауза между открытиями
 pause = 4
 def main():
-    print("[INFO]Нужно помнить что нахождение в некоторых локациях, например подзем, не дает обработать казну")
     config = configparser.ConfigParser()  # создаём объекта парсера
     config.read("config.ini")  # читаем конфиг
     basepath = config["PATH"]["workdir"]
@@ -52,10 +42,17 @@ def main():
     sleep(3)
     driver.get("https://g1.botva.ru/index.php?pandora=253233098&type=gold")
     sleep(3)
-    for i in range(1, N + 1):
-    m = driver.find_element(By.CLASS_NAME, "button_new").click()
+    m = driver.find_element(By.CLASS_NAME, "button_new")
+    m.click()
     sleep(pause)
-    print(i)
-
+    m = driver.find_element(By.CLASS_NAME, "button_new")
+    m.click()
+    sleep(pause)
+    '''
+    for i in range(1, N):
+        j = driver.find_element(By.CLASS_NAME, "button_new").click()
+        sleep(pause)
+        print(i)
+    '''
 if __name__ == "__main__":
     main()
