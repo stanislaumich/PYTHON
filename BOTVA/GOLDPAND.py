@@ -7,7 +7,7 @@ import configparser
 from selenium import webdriver
 ''''''
 # количество панд для открытия
-N = 5
+N = 10
 # пауза между открытиями
 pause = 6
 def main():
