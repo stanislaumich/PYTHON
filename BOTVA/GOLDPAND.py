@@ -7,12 +7,12 @@ import configparser
 from selenium import webdriver
 ''''''
 # количество панд для открытия
-N = 10
+N = 3
 # пауза между открытиями
 pause = 6
 def main():
     config = configparser.ConfigParser()  # создаём объекта парсера
-    config.read("config.ini")  # читаем конфиг
+    config.read("s:\\config.ini")  # читаем конфиг
     basepath = config["PATH"]["workdir"]
     try:
         os.mkdir(basepath)
@@ -28,7 +28,7 @@ def main():
     options.add_argument(r"user-data-dir="+myp)
     options.add_argument("--profile-directory=BOTVA")
 
-    driver = webdriver.Chrome(chrome_options=options)
+    driver = webdriver.Chrome(options=options)#chrome_
     print("Логин...  ")
     driver.get("http://botva.ru")
     element = driver.find_element(By.CLASS_NAME, "sign_in")
