@@ -15,7 +15,8 @@ from selenium import webdriver
 def main():
     print("[INFO]Нужно помнить что нахождение в некоторых локациях, например подзем, не дает обработать казну")
     config = configparser.ConfigParser()  # создаём объекта парсера
-    config.read("config.ini")  # читаем конфиг
+    config.read("s:\\config.ini")  # читаем конфиг
+
     basepath = config["PATH"]["workdir"]
     try:
         os.mkdir(basepath)
@@ -23,6 +24,7 @@ def main():
         print("Проверка рабочей папки")
     finally:
         print(" ")
+
     base = config["PATH"]["base"]
     print("Создаем и открываем базу данных: "+base)
     con = sqlite3.connect(base)
@@ -96,7 +98,7 @@ def main():
                 sql_select_query = """select nik from klan where nik like ?"""
                 cursor.execute(sql_select_query, (ts,))
                 record = cursor.fetchone()
-                ts = record[0]
+                ts = record[0].upper()
                 print(ts)
                 bob = (dt, i, ts, cnt)
                 bl.append(bob)
