@@ -52,11 +52,13 @@ def main():
     try:
         for cookie in pickle.load(open("QuoraCookies.pkl", "rb")):
             driver.add_cookie(cookie)
+            print(cookie)
     except:
         sleep(1)
     finally:
         sleep(1)
     driver.get("http://botva.ru")
+    sleep(5)
     try:
         element = driver.find_element(By.CLASS_NAME, "sign_in")
         element.click()
@@ -71,9 +73,9 @@ def main():
     finally:
         sleep(3)
 
-
     pickle.dump(driver.get_cookies(), open("QuoraCookies.pkl", "wb"))
     driver.get("https://g1.botva.ru/clan_members.php?id=21148")
+
     sleep(3)
     print("Обработка БМ")
     fl = []
@@ -87,9 +89,9 @@ def main():
         print(sl)
         zv = el.find_element(By.CLASS_NAME, "pl5").text
         print(zv)
-        bob = (nik, bm, sl, dt, tm, zv)
+        bob = (nik, bm, sl, dt, tm)
         fl.append(bob)
-    cursor.executemany("INSERT INTO voin (nik, bm, slava, dt, tm, dop) VALUES (?, ?, ?, ?, ?, ?)", fl)
+    cursor.executemany("INSERT INTO voin (nik, bm, slava, dt, tm) VALUES (?, ?, ?, ?, ?)", fl)
 
     ''' nik, url,BM, SLAVA, Lev, dt, tm'''
 
