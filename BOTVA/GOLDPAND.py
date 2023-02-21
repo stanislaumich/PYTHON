@@ -5,9 +5,10 @@ import os
 from selenium.webdriver.common.by import By
 import configparser
 from selenium import webdriver
+import pickle
 ''''''
 # количество панд для открытия
-N = 40
+N = 18
 # пауза между открытиями
 pause = 6
 def main():

@@ -9,11 +9,12 @@ from datetime import datetime
 import configparser
 import sqlite3
 from selenium import webdriver
+import pickle
 
 def main():
     print("[INFO]Нужно помнить что нахождение в некоторых локациях, например подзем, не дает обработать казну")
     config = configparser.ConfigParser()  # создаём объекта парсера
-    config.read("config.ini")  # читаем конфиг
+    config.read("s:\\config.ini")  # читаем конфиг
     basepath = config["PATH"]["workdir"]
     try:
         os.mkdir(basepath)
@@ -25,14 +26,9 @@ def main():
     print("Создаем и открываем базу данных: "+base)
     con = sqlite3.connect(base)
     cursor = con.cursor()
-    cursor.execute("""CREATE TABLE IF NOT EXISTS KLAN
-                    (id INTEGER PRIMARY KEY AUTOINCREMENT,  
-                    nik TEXT, 
-                    bm  text,
-                    sl  text,
-                    dt  text,
-                    tm  text,
-                    dop text)""")
+    cursor.execute("""CREATE TABLE IF NOT EXISTS VOIN (id BIGINT, nik VARCHAR(50) DEFAULT NULL, 
+    url VARCHAR(5000) DEFAULT NULL, BM BIGINT, SLAVA BIGINT, Lev INTEGER,    
+    dt VARCHAR(50) DEFAULT NULL, tm VARCHAR(50))""")
     cursor.execute("""CREATE TABLE IF NOT EXISTS podzem (dt VARCHAR (50), num INTEGER, nik VARCHAR2 (50), 
     id  INTEGER, val VARCHAR2 (1000))""")
     cursor.execute("""CREATE TABLE IF NOT EXISTS kazna (dt VARCHAR(30), nik VARCHAR(100), gold VARCHAR(30),
@@ -50,18 +46,33 @@ def main():
     options.add_argument("--allow-profiles-outside-user-dir")
     options.add_argument(r"user-data-dir="+myp)
     options.add_argument("--profile-directory=BOTVA")
-    driver = webdriver.Chrome(chrome_options=options)
+    driver = webdriver.Chrome(options=options)
     print("Логин...  ")
+
+    try:
+        for cookie in pickle.load(open("QuoraCookies.pkl", "rb")):
+            driver.add_cookie(cookie)
+    except:
+        sleep(1)
+    finally:
+        sleep(1)
     driver.get("http://botva.ru")
-    element = driver.find_element(By.CLASS_NAME, "sign_in")
-    element.click()
-    element = driver.find_element("name", "email")
-    element.send_keys(config["LOGIN"]["username"])
-    element = driver.find_element("name", "password")
-    element.send_keys(config["LOGIN"]["password"])
-    element = driver.find_element(By.CLASS_NAME, "submit_by_ajax_completed")
-    element.submit()
-    sleep(3)
+    try:
+        element = driver.find_element(By.CLASS_NAME, "sign_in")
+        element.click()
+        element = driver.find_element("name", "email")
+        element.send_keys(config["LOGIN"]["username"])
+        element = driver.find_element("name", "password")
+        element.send_keys(config["LOGIN"]["password"])
+        element = driver.find_element(By.CLASS_NAME, "submit_by_ajax_completed")
+        element.submit()
+    except:
+        sleep(1)
+    finally:
+        sleep(3)
+
+
+    pickle.dump(driver.get_cookies(), open("QuoraCookies.pkl", "wb"))
     driver.get("https://g1.botva.ru/clan_members.php?id=21148")
     sleep(3)
     print("Обработка БМ")
@@ -78,7 +89,10 @@ def main():
         print(zv)
         bob = (nik, bm, sl, dt, tm, zv)
         fl.append(bob)
-    cursor.executemany("INSERT INTO KLAN (nik, bm, sl, dt, tm, dop) VALUES (?, ?, ?, ?, ?, ?)", fl)
+    cursor.executemany("INSERT INTO voin (nik, bm, slava, dt, tm, dop) VALUES (?, ?, ?, ?, ?, ?)", fl)
+
+    ''' nik, url,BM, SLAVA, Lev, dt, tm'''
+
     con.commit()
 
 if __name__ == "__main__":

@@ -43,6 +43,8 @@ def main():
     pirah VARCHAR(30), kri VARCHAR(30))""")
     cursor.execute("""CREATE TABLE IF NOT EXISTS zad(id INTEGER PRIMARY KEY AUTOINCREMENT, dt VARCHAR(30),
     tip INTEGER, nik VARCHAR(300), val INTEGER)""")
+    cursor.execute("""CREATE TABLE IF NOT EXISTS podzemurl (dt VARCHAR (50), 
+    url1  VARCHAR (1000), url2 VARCHAR (1000))""")
 
     nw = datetime.now()
     dt = nw.strftime("%d.%m.%Y")
@@ -70,13 +72,18 @@ def main():
     print("Обработка подзема")
     f1 = open('podzem.txt')
     flist = f1.readlines()
+    gurl = []
+    gdt = ""
+    url = []
     for el in flist:
         crt = el.split('\t')
         print(crt[0])
         dt = crt[0]
+
         for i in range(1, 3):
             # первая и вторая ссылки в строке
             href = crt[i]
+            url[i] = href
             idp0 = href.split("&")
             idp1 = idp0[3].split("=")
             idp = idp1[1]
@@ -86,6 +93,7 @@ def main():
             print(f"Master: {master}")
             sql_select_query = """insert into podzem (dt, num, nik, id, val) values(?,?,?,?,0)"""
             bob = (dt, i, master, -1)
+            gdt = dt
             cursor.execute(sql_select_query, bob)
             con.commit()
             elements = driver.find_elements(By.CLASS_NAME, "round3")
@@ -122,6 +130,13 @@ def main():
             sql_select_query = """insert into podzem (dt, num, nik, id, val) values(?,?,?,?,?)"""
             cursor.execute(sql_select_query, on)
             con.commit()
+
+        gbob = (gdt, url[1],url[2])
+        gurl.append(gbob)
+
+    cursor_q = "insert into podzemurl (dt, url1, url2) values(?,?,?)"
+    cursor.executemany(cursor_q, gbob)
+
 
 if __name__ == "__main__":
     main()
