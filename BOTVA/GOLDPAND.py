@@ -8,7 +8,7 @@ from selenium import webdriver
 import pickle
 ''''''
 # количество панд для открытия
-N = 18
+N = 60
 # пауза между открытиями
 pause = 6
 def main():
