@@ -84,14 +84,16 @@ def main():
         nik = el.find_element(By.CLASS_NAME, "profile ").text
         print(nik)
         bm = el.find_element(By.CLASS_NAME, "right").text
+        bm = bm.replace(".", "")
         print(bm)
         sl = el.find_element(By.CLASS_NAME, "nowrapi").text
+        sl = sl.replace(".", "")
         print(sl)
         zv = el.find_element(By.CLASS_NAME, "pl5").text
         print(zv)
         bob = (nik, bm, sl, dt, tm)
         fl.append(bob)
-    cursor.executemany("INSERT INTO voin (nik, bm, slava, dt, tm) VALUES (?, ?, ?, ?, ?)", fl)
+    cursor.executemany("INSERT INTO KLAN (nik, bm, sl, dt, tm) VALUES (?, ?, ?, ?, ?)", fl)
 
     ''' nik, url,BM, SLAVA, Lev, dt, tm'''
 

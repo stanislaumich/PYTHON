@@ -56,7 +56,7 @@ def main():
     options.add_argument("--allow-profiles-outside-user-dir")
     options.add_argument(r"user-data-dir="+myp)
     options.add_argument("--profile-directory=BOTVA")
-    driver = webdriver.Chrome(chrome_options=options)
+    driver = webdriver.Chrome(options=options)
     print("Логин...  ")
     driver.get("http://botva.ru")
     element = driver.find_element(By.CLASS_NAME, "sign_in")
@@ -83,7 +83,8 @@ def main():
         for i in range(1, 3):
             # первая и вторая ссылки в строке
             href = crt[i]
-            url[i] = href
+            print(href)
+            #url[i] = href
             idp0 = href.split("&")
             idp1 = idp0[3].split("=")
             idp = idp1[1]
@@ -131,11 +132,11 @@ def main():
             cursor.execute(sql_select_query, on)
             con.commit()
 
-        gbob = (gdt, url[1],url[2])
-        gurl.append(gbob)
+        #gbob = (gdt, url[1], url[2])
+        #gurl.append(gbob)
 
-    cursor_q = "insert into podzemurl (dt, url1, url2) values(?,?,?)"
-    cursor.executemany(cursor_q, gbob)
+    #cursor_q = "insert into podzemurl (dt, url1, url2) values(?,?,?)"
+    #cursor.executemany(cursor_q, gbob)
 
 
 if __name__ == "__main__":
