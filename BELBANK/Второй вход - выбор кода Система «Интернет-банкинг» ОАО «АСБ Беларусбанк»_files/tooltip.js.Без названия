@@ -1,0 +1,126 @@
+jQuery(document).ready(function(){
+	jQuery(document).on('click', 'a.question', function(){
+		jQuery(this).parent().toggleClass("infoActive_c");//'infoActive_c' - marker class for tooltip pinned with mose click
+		handleTips(this);
+		return false;
+	});
+	jQuery(document).on('mouseover', 'a.question', function(){
+		jQuery(this).parent().toggleClass("infoActive_m");//'infoActive_m' - marker class for tooltip when mouse pointer is over the button
+		handleTips(this);
+		return false;
+	});
+	jQuery(document).on('mouseout', 'a.question', function(){
+		jQuery(this).parent().toggleClass("infoActive_m");
+		handleTips(this);
+		return false;
+	});
+	jQuery(document).on('click', 'a.s_info', function(){
+		jQuery(this).parent().toggleClass("infoActive_c");
+		handleTips(this);
+		return false;
+	});
+	jQuery(document).on('mouseover', 'a.s_info', function(){
+		jQuery(this).parent().toggleClass("infoActive_m");
+		handleTips(this);
+		return false;
+	});
+	jQuery(document).on('mouseout', 'a.s_info', function(){
+		jQuery(this).parent().toggleClass("infoActive_m");
+		handleTips(this);
+		return false;
+	});
+	jQuery(document).on('click', 'a.s_info_small', function(){
+		jQuery(this).parent().toggleClass("infoActive_c");
+		handleTips(this);
+		return false;
+	});
+	jQuery(document).on('mouseover', 'a.s_info_small', function(){
+		jQuery(this).parent().toggleClass("infoActive_m");
+		handleTips(this);
+		return false;
+	});
+	jQuery(document).on('mouseout', 'a.s_info_small', function(){
+		jQuery(this).parent().toggleClass("infoActive_m");
+		handleTips(this);
+		return false;
+	});
+	jQuery(document).on('click', 'a.close', function(){
+		jQuery(this).parent().parent().removeClass("infoActive_c");
+		return false;
+	});
+	jQuery(document).on('click', 'a.ibhelp_s_info', function(){
+		jQuery(this).parent().toggleClass("infoActive_c");
+		if (jQuery(this).parent().find('div.ibhelp_loading')) {
+			loadHelp(jQuery(this).parent(), jQuery(this).parent().parent().find('.ibhelpURL').html());
+		}
+		handleTips(this);
+		return false;
+	});
+	jQuery(document).on('mouseover', 'a.ibhelp_s_info', function(){
+		jQuery(this).parent().toggleClass("infoActive_m");
+		if (jQuery(this).parent().find('div.ibhelp_loading')) {
+			loadHelp(jQuery(this).parent(), jQuery(this).parent().parent().find('.ibhelpURL').html());
+		}
+		handleTips(this);
+		return false;
+	});
+	jQuery(document).on('mouseout', 'a.ibhelp_s_info', function(){
+		jQuery(this).parent().toggleClass("infoActive_m");
+		if (jQuery(this).parent().find('div.ibhelp_loading')) {
+			loadHelp(jQuery(this).parent(), jQuery(this).parent().parent().find('.ibhelpURL').html());
+		}
+		handleTips(this);
+		return false;
+	});
+	jQuery('a.question').removeAttr('onclick');//use next five lines wherever links have form submit attached to 'onclick' event
+	jQuery('a.s_info').removeAttr('onclick');
+	jQuery('a.s_info_small').removeAttr('onclick');
+	jQuery('a.ibhelp_s_info').removeAttr('onclick');
+	jQuery('a.close').removeAttr('onclick');
+	unescapeTooltips();//use to un-escape HTML characters
+});
+
+function handleTips(obj){ //hides all open tooltips to prevent multiple tooltips shown at the same time
+	var infos = jQuery('.question_info').parent();
+	var has_c = jQuery(obj).parent().hasClass("infoActive_c");
+	var has_m = jQuery(obj).parent().hasClass("infoActive_m");
+	for (var i = 0; i < infos.length; i++){
+		jQuery(infos[i]).removeClass("infoActive_c");
+		jQuery(infos[i]).removeClass("infoActive_m");
+	}
+	if (has_c) {
+		jQuery(obj).parent().addClass("infoActive_c");
+	}
+	if (has_m) {
+		jQuery(obj).parent().addClass("infoActive_m");
+	}
+};
+
+function unescapeTooltips(){
+	jQuery.each(jQuery('div.tooltip'), function (index, value){
+		var htmlString = jQuery(value).children('div').html().replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+		jQuery(value).children('div').html(htmlString);
+	});
+}
+
+function unescapeUnicodeHexTooltips(){ //Use when text output is in following format: '\u0411\u0430\u043d\u043a'
+	jQuery.each(jQuery('div.tooltip'), function (index, value){
+		var htmlString = jQuery(value).children('div').html().replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+		jQuery(value).children('div').html(htmlString.replace(
+                /\\u([0-9a-f]{4})/g, 
+                function (whole, group1) {
+                    return String.fromCharCode(parseInt(group1, 16));
+                }
+            ));
+	});
+}
+
+function loadHelp(obj, url){
+jQuery.get(url)
+	.done(function(data){
+		jQuery(obj).find('div.ibhelp_content').html(data);
+	})
+	.fail(function(){
+		jQuery(obj).find('div.ibhelp_content').html('<span>&#x421;&#x43F;&#x440;&#x430;&#x432;&#x43A;&#x430; &#x43D;&#x435;&#x434;&#x43E;&#x441;&#x442;&#x443;&#x43F;&#x43D;&#x430;</span>');
+	});
+}

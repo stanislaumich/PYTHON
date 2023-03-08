@@ -1,0 +1,231 @@
+.tutorial_map_big{width:540px;height:600px;background:url(/images/tutor/tutor_map.jpg) no-repeat center top;position:relative;border-radius:3px}.tutorial_map_big.compact{height:200px;overflow:hidden}.tutorial_map_big.compact2{height:400px;overflow:hidden}.tutorial_end{cursor:pointer;padding:0;top:8px;position:absolute;left:10px;font-size:10px;font-weight:normal;text-transform:none;border-bottom:1px dashed}.starter_line{margin-bottom:1px;height:110px;padding:5px
+10px;color:#fff;background-position:-50% 0;transition:background-position .5s, box-shadow .3s;display:block;position:relative;z-index:10;text-decoration:none}.starter_line
+*{display:block}.starter_line:hover{color:#fff;text-decoration:none;background-position:-20% 0;box-shadow:inset 0 0 100px 2px rgba(255,255,255,.4)}.starter_line.line1{background-image:url(/images/tutor/tutor_map_1.png)}.starter_line.line2{background-image:url(/images/tutor/tutor_map_2.png)}.starter_line.line3{background-image:url(/images/tutor/tutor_map_3.png)}.starter_line:first-child{border-top-left-radius:3px;border-top-right-radius:3px}.starter_line:last-child{border-bottom-left-radius:3px;border-bottom-right-radius:3px}.starter_line_name{padding-bottom:5px;border-bottom:1px solid rgba(255,255,255,.3);margin-bottom:10px;text-transform:uppercase;color:#fff;font-weight:700}.starter_line_text{width:90px;float:left;text-align:left}.starter_line .starter_line_text
+.icon2{display:inline-block}.starter_line_task_border{margin-right:10px;float:left;position:relative !important}.starter_line_task_border
+.starter_task_image{width:70px;height:70px;position:relative;left:-5px;top:-5px}.starter_line
+.confirm{display:none}.starter_line.done
+.confirm{margin:-4px 0;display:inline-block}.starter_line_text
+b{display:inline}.casual
+.starter_line{height:100px;padding:8px
+9px 7px;margin-bottom:0;border-radius:0}.casual .starter_line:nth-child(odd){box-shadow:inset 0 0 100px 2px rgba(255,255,255,.3)}.casual .starter_line:hover{box-shadow:inset 0 0 100px 2px rgba(255,255,255,.8)}.casual
+.starter_line{background:none}.casual
+.starter_line_name{border-color:#cebb9e;color:#542f1b}.casual
+.starter_line{color:#542f1b}.casual
+.show_map_popup{margin:0
+0 10px;position:relative;cursor:pointer;z-index:10}.casual
+.starter_line_lord{background-image:url(/images/tutor/tutor_map_3_casual.png);box-shadow:none}.casual .starter_line_lord
+.starter_line_name{color:#037100}.casual .starter_line_lord
+.starter_line_name{border-color:#037100}.casual .starter_line_name
+b{display:inline-block}.casual .starter_line
+.button_solid{position:absolute;left:0;right:0;bottom:0;border-radius:0}.casual .starter_line .button_solid
+b{display:inline-block}.casual .starter_line:hover
+.button_solid{background-color:#a1da71;color:#025d01}.starter_line_wide{width:540px;height:200px;position:relative;border-radius:3px;background-repeat:repeat-x}.starter_line_wide_back{width:200px;height:120px;position:absolute;left:0;top:0;pointer-events:none}.starter_line_wide_person{width:150px;height:150px;position:absolute;left:0;top:-30px;pointer-events:none}.starter_line_wide:last-child{margin-bottom:0}.starter_line_task_border,.starter_line_wide_task{width:60px;height:60px;position:absolute;background-position:-60px 0}.starter_line_task_border.unactive,.starter_line_wide_task.unactive{background-position:0 0}.unactive
+.starter_line_task_border{background-position:0 0}.done
+.starter_line_task_border{background-position:-60px 0}.starter_line_wide_task.selected{filter:brightness(120%)}.starter_line_task_border .confirm,
+.starter_line_wide_task
+.confirm{position:absolute;right:0;top:0;display:none;z-index:2}.starter_line_task_border.done .confirm,
+.starter_line_wide_task.done
+.confirm{display:block}.starter_line_task_border.line1,
+.starter_line_wide
+.starter_line_wide_task{background-image:url(/images/tutor/bg_task_1.png)}.starter_line_task_border.line2,
+.starter_line_wide
+.starter_line_wide_task{background-image:url(/images/tutor/bg_task_2.png)}.starter_line_task_border.line3,
+.starter_line_wide
+.starter_line_wide_task{background-image:url(/images/tutor/bg_task_3.png)}.starter_line_wide_task.task1{left:100px;top:20px}.starter_line_wide_task.task2{left:180px;top:40px}.starter_line_wide_task.task3{left:260px;top:20px}.starter_line_wide_task.task4{left:330px;top:50px}.starter_line_wide_task.task5{left:410px;top:20px}.starter_line_wide_task.task6{left:460px;top:80px}.starter_line_wide_task.task7{left:400px;top:130px}.starter_line_wide_task.task8{left:310px;top:130px}.starter_line_wide_task.task9{left:230px;top:110px}.starter_line_wide_task.task10{left:150px;top:130px}.starter_line_wide_task.task11{left:100px;top:210px}.starter_line_wide_task.task12{left:20px;top:240px}.starter_line_wide_task.task13{left:30px;top:330px}.starter_line_wide_task.task14{left:100px;top:290px}.starter_line_wide_task.task15{left:180px;top:320px}.starter_line_wide_task.task16{left:260px;top:290px}.starter_line_wide_task.task17{left:190px;top:230px}.starter_line_wide_task.task18{left:280px;top:210px}.starter_line_wide_task.task19{left:360px;top:240px}.starter_line_wide_task.task20{left:340px;top:330px}.starter_line_wide_task.task21{left:290px;top:410px}.starter_line_wide_task.task22{left:360px;top:470px}.starter_line_wide_task.task23{left:400px;top:410px}.starter_line_wide_task.task24{left:460px;top:460px}.starter_line_wide_task.task25{left:410px;top:530px}.starter_line_wide_task.task26{left:300px;top:520px}.starter_line_wide_task.task27{left:200px;top:530px}.starter_line_wide_task.task28{left:220px;top:450px}.starter_line_wide_task.task29{left:150px;top:410px}.starter_line_wide_task.task30{left:120px;top:500px}.starter_task_image,.starter_line_wide_task_image{width:70px;height:70px;background-image:url(/images/tutor/tutor_icons.png);position:absolute;left:-5px;top:-5px}.starter_line_wide_task_image{z-index:2}.starter_task_image{float:left;position:static}.starter_line_wide_task.done
+.starter_line_wide_task_image{filter:grayscale(30%) contrast(60%)}.starter_task_image.task1,
+.starter_line_wide_task.task1
+.starter_line_wide_task_image{background-position:-70px 0}.starter_task_image.task1.unactive,
+.starter_line_wide_task.task1.unactive
+.starter_line_wide_task_image{background-position:-70px -70px}.starter_task_image.task2,
+.starter_line_wide_task.task2
+.starter_line_wide_task_image{background-position:0 -420px}.starter_task_image.task2.unactive,
+.starter_line_wide_task.task2.unactive
+.starter_line_wide_task_image{background-position:-490px 0}.starter_task_image.task3,
+.starter_line_wide_task.task3
+.starter_line_wide_task_image{background-position:-140px 0}.starter_task_image.task3.unactive,
+.starter_line_wide_task.task3.unactive
+.starter_line_wide_task_image{background-position:-140px -70px}.starter_task_image.task4,
+.starter_line_wide_task.task4
+.starter_line_wide_task_image{background-position:-210px 0}.starter_task_image.task4.unactive,
+.starter_line_wide_task.task4.unactive
+.starter_line_wide_task_image{background-position:-210px -70px}.starter_task_image.task5,
+.starter_line_wide_task.task5
+.starter_line_wide_task_image{background-position:-280px 0}.starter_task_image.task5.unactive,
+.starter_line_wide_task.task5.unactive
+.starter_line_wide_task_image{background-position:-280px -70px}.starter_task_image.task6,
+.starter_line_wide_task.task6
+.starter_line_wide_task_image{background-position:-350px 0}.starter_task_image.task6.unactive,
+.starter_line_wide_task.task6.unactive
+.starter_line_wide_task_image{background-position:-350px -70px}.starter_task_image.task7,
+.starter_line_wide_task.task7
+.starter_line_wide_task_image{background-position:-420px 0}.starter_task_image.task7.unactive,
+.starter_line_wide_task.task7.unactive
+.starter_line_wide_task_image{background-position:-420px -70px}.starter_task_image.task8,
+.starter_line_wide_task.task8
+.starter_line_wide_task_image{background-position:-490px 0}.starter_task_image.task8.unactive,
+.starter_line_wide_task.task8.unactive
+.starter_line_wide_task_image{background-position:-490px -70px}.starter_task_image.task9,
+.starter_line_wide_task.task9
+.starter_line_wide_task_image{background-position:-560px 0}.starter_task_image.task9.unactive,
+.starter_line_wide_task.task9.unactive
+.starter_line_wide_task_image{background-position:-560px -70px}.starter_task_image.task10,
+.starter_line_wide_task.task10
+.starter_line_wide_task_image{background-position:-630px 0}.starter_task_image.task10.unactive,
+.starter_line_wide_task.task10.unactive
+.starter_line_wide_task_image{background-position:-630px -70px}.starter_task_image.task11,
+.starter_line_wide_task.task11
+.starter_line_wide_task_image{background-position:0 -140px}.starter_task_image.task11.unactive,
+.starter_line_wide_task.task11.unactive
+.starter_line_wide_task_image{background-position:0 -210px}.starter_task_image.task12,
+.starter_line_wide_task.task12
+.starter_line_wide_task_image{background-position:-70px -140px}.starter_task_image.task12.unactive,
+.starter_line_wide_task.task12.unactive
+.starter_line_wide_task_image{background-position:-70px -210px}.starter_task_image.task13,
+.starter_line_wide_task.task13
+.starter_line_wide_task_image{background-position:-140px -140px}.starter_task_image.task13.unactive,
+.starter_line_wide_task.task13.unactive
+.starter_line_wide_task_image{background-position:-140px -210px}.starter_task_image.task14,
+.starter_line_wide_task.task14
+.starter_line_wide_task_image{background-position:-210px -140px}.starter_task_image.task14.unactive,
+.starter_line_wide_task.task14.unactive
+.starter_line_wide_task_image{background-position:-210px -210px}.starter_task_image.task15,
+.starter_line_wide_task.task15
+.starter_line_wide_task_image{background-position:-280px -140px}.starter_task_image.task15.unactive,
+.starter_line_wide_task.task15.unactive
+.starter_line_wide_task_image{background-position:-280px -210px}.starter_task_image.task16,
+.starter_line_wide_task.task16
+.starter_line_wide_task_image{background-position:-350px -140px}.starter_task_image.task16.unactive,
+.starter_line_wide_task.task16.unactive
+.starter_line_wide_task_image{background-position:-350px -210px}.starter_task_image.task17,
+.starter_line_wide_task.task17
+.starter_line_wide_task_image{background-position:-420px -140px}.starter_task_image.task17.unactive,
+.starter_line_wide_task.task17.unactive
+.starter_line_wide_task_image{background-position:-420px -210px}.starter_task_image.task18,
+.starter_line_wide_task.task18
+.starter_line_wide_task_image{background-position:-490px -140px}.starter_task_image.task18.unactive,
+.starter_line_wide_task.task18.unactive
+.starter_line_wide_task_image{background-position:-490px -210px}.starter_task_image.task19,
+.starter_line_wide_task.task19
+.starter_line_wide_task_image{background-position:-560px -140px}.starter_task_image.task19.unactive,
+.starter_line_wide_task.task19.unactive
+.starter_line_wide_task_image{background-position:-560px -210px}.starter_task_image.task20,
+.starter_line_wide_task.task20
+.starter_line_wide_task_image{background-position:-630px -140px}.starter_task_image.task20.unactive,
+.starter_line_wide_task.task20.unactive
+.starter_line_wide_task_image{background-position:-630px -210px}.starter_task_image.task21,
+.starter_line_wide_task.task21
+.starter_line_wide_task_image{background-position:0 -280px}.starter_task_image.task21.unactive,
+.starter_line_wide_task.task21.unactive
+.starter_line_wide_task_image{background-position:0 -350px}.starter_task_image.task22,
+.starter_line_wide_task.task22
+.starter_line_wide_task_image{background-position:-70px -280px}.starter_task_image.task22.unactive,
+.starter_line_wide_task.task22.unactive
+.starter_line_wide_task_image{background-position:-70px -350px}.starter_task_image.task23,
+.starter_line_wide_task.task23
+.starter_line_wide_task_image{background-position:-140px -280px}.starter_task_image.task23.unactive,
+.starter_line_wide_task.task23.unactive
+.starter_line_wide_task_image{background-position:-140px -350px}.starter_task_image.task24,
+.starter_line_wide_task.task24
+.starter_line_wide_task_image{background-position:-210px -280px}.starter_task_image.task24.unactive,
+.starter_line_wide_task.task24.unactive
+.starter_line_wide_task_image{background-position:-210px -350px}.starter_task_image.task25,
+.starter_line_wide_task.task25
+.starter_line_wide_task_image{background-position:-280px -280px}.starter_task_image.task25.unactive,
+.starter_line_wide_task.task25.unactive
+.starter_line_wide_task_image{background-position:-280px -350px}.starter_task_image.task26,
+.starter_line_wide_task.task26
+.starter_line_wide_task_image{background-position:-350px -280px}.starter_task_image.task26.unactive,
+.starter_line_wide_task.task26.unactive
+.starter_line_wide_task_image{background-position:-350px -350px}.starter_task_image.task27,
+.starter_line_wide_task.task27
+.starter_line_wide_task_image{background-position:-420px -280px}.starter_task_image.task27.unactive,
+.starter_line_wide_task.task27.unactive
+.starter_line_wide_task_image{background-position:-420px -350px}.starter_task_image.task28,
+.starter_line_wide_task.task28
+.starter_line_wide_task_image{background-position:-490px -280px}.starter_task_image.task28.unactive,
+.starter_line_wide_task.task28.unactive
+.starter_line_wide_task_image{background-position:-490px -350px}.starter_task_image.task29,
+.starter_line_wide_task.task29
+.starter_line_wide_task_image{background-position:-560px -280px}.starter_task_image.task29.unactive,
+.starter_line_wide_task.task29.unactive
+.starter_line_wide_task_image{background-position:-560px -350px}.starter_task_image.task30,
+.starter_line_wide_task.task30
+.starter_line_wide_task_image{background-position:-630px -280px}.starter_task_image.task30.unactive,
+.starter_line_wide_task.task30.unactive
+.starter_line_wide_task_image{background-position:-630px -350px}@keyframes
+jump{0%{transform:translateY(0)}60%{transform:translateY(0)}70%{transform:translateY(-5px)}80%{transform:translateY(0)}90%{transform:translateY(-5px)}100%{transform:translateY(0)}}.button_jump{animation:jump 2s infinite}.starter_line_task_border.pulsate{animation:pulsate 3s infinite}@keyframes
+pulsate{0%{transform:scale(1)}60%{transform:scale(1)}70%{transform:scale(.8)}80%{transform:scale(1)}90%{transform:scale(.8)}100%{transform:scale(1)}}.starter_task_text{width:420px;margin:0
+0 10px 70px;font-size:12px;padding:10px
+15px;background:#fff;color:#000;position:relative;z-index:3;box-shadow:0 2px 5px 0 rgba(0,0,0,.5);border-radius:10px;top:-25px}.starter_task_text:before{content:'';width:0;height:0;border-left:4px solid transparent;border-right:4px solid transparent;border-bottom:10px solid #fff;border-top:4px solid transparent;left:13px;top:-14px;position:absolute}.starter_task_text.right_side:before{left:auto;right:13px}.starter_task_text_title{padding:5px
+0;font-size:14px;line-height:150%}.starter_task_text_content{margin:-20px 0 0 70px}.casual .starter_task_image.task1,
+.casual .starter_line_wide_task.task1
+.starter_line_wide_task_image{background-position:-70px -420px}.casual .starter_task_image.task1.unactive,
+.casual .starter_line_wide_task.task1.unactive
+.starter_line_wide_task_image{background-position:-70px -490px}.casual .starter_task_image.task2,
+.casual .starter_line_wide_task.task2
+.starter_line_wide_task_image{background-position:-140px -420px}.casual .starter_task_image.task2.unactive,
+.casual .starter_line_wide_task.task2.unactive
+.starter_line_wide_task_image{background-position:-140px -490px}.casual .starter_task_image.task3,
+.casual .starter_line_wide_task.task3
+.starter_line_wide_task_image{background-position:-210px -420px}.casual .starter_task_image.task3.unactive,
+.casual .starter_line_wide_task.task3.unactive
+.starter_line_wide_task_image{background-position:-210px -490px}.casual .starter_task_image.task4,
+.casual .starter_line_wide_task.task4
+.starter_line_wide_task_image{background-position:-280px -420px}.casual .starter_task_image.task4.unactive,
+.casual .starter_line_wide_task.task4.unactive
+.starter_line_wide_task_image{background-position:-280px -490px}.casual .starter_task_image.task5,
+.casual .starter_line_wide_task.task5
+.starter_line_wide_task_image{background-position:-350px -420px}.casual .starter_task_image.task5.unactive,
+.casual .starter_line_wide_task.task5.unactive
+.starter_line_wide_task_image{background-position:-350px -490px}.casual .starter_task_image.task6,
+.casual .starter_line_wide_task.task6
+.starter_line_wide_task_image{background-position:-490px -420px}.casual .starter_task_image.task6.unactive,
+.casual .starter_line_wide_task.task6.unactive
+.starter_line_wide_task_image{background-position:-490px -490px}.casual .starter_task_image.task7,
+.casual .starter_line_wide_task.task7
+.starter_line_wide_task_image{background-position:-350px -560px}.casual .starter_task_image.task7.unactive,
+.casual .starter_line_wide_task.task7.unactive
+.starter_line_wide_task_image{background-position:-350px -630px}.casual .starter_task_image.task8,
+.casual .starter_line_wide_task.task8
+.starter_line_wide_task_image{background-position:-560px -420px}.casual .starter_task_image.task8.unactive,
+.casual .starter_line_wide_task.task8.unactive
+.starter_line_wide_task_image{background-position:-560px -490px}.casual .starter_task_image.task9,
+.casual .starter_line_wide_task.task9
+.starter_line_wide_task_image{background-position:-630px -420px}.casual .starter_task_image.task9.unactive,
+.casual .starter_line_wide_task.task9.unactive
+.starter_line_wide_task_image{background-position:-630px -490px}.casual .starter_task_image.task10,
+.casual .starter_line_wide_task.task10
+.starter_line_wide_task_image{background-position:-420px -560px}.casual .starter_task_image.task10.unactive,
+.casual .starter_line_wide_task.task10.unactive
+.starter_line_wide_task_image{background-position:-420px -630px}.casual .starter_task_image.task11,
+.casual .starter_line_wide_task.task11
+.starter_line_wide_task_image{background-position:-70px -560px}.casual .starter_task_image.task11.unactive,
+.casual .starter_line_wide_task.task11.unactive
+.starter_line_wide_task_image{background-position:-70px -630px}.casual .starter_task_image.task12,
+.casual .starter_line_wide_task.task12
+.starter_line_wide_task_image{background-position:-140px -560px}.casual .starter_task_image.task12.unactive,
+.casual .starter_line_wide_task.task12.unactive
+.starter_line_wide_task_image{background-position:-140px -630px}.casual .starter_task_image.task13,
+.casual .starter_line_wide_task.task13
+.starter_line_wide_task_image{background-position:-210px -560px}.casual .starter_task_image.task13.unactive,
+.casual .starter_line_wide_task.task13.unactive
+.starter_line_wide_task_image{background-position:-210px -630px}.casual .starter_task_image.task14,
+.casual .starter_line_wide_task.task14
+.starter_line_wide_task_image{background-position:-420px -420px}.casual .starter_task_image.task14.unactive,
+.casual .starter_line_wide_task.task14.unactive
+.starter_line_wide_task_image{background-position:-490px -420px}.casual .starter_task_image.task15,
+.casual .starter_line_wide_task.task15
+.starter_line_wide_task_image{background-position:0 -560px}.casual .starter_task_image.task15.unactive,
+.casual .starter_line_wide_task.task15.unactive
+.starter_line_wide_task_image{background-position:0 -560px}.casual .starter_task_image.task16,
+.casual .starter_line_wide_task.task16
+.starter_line_wide_task_image{background-position:-280px -560px}.casual .starter_task_image.task16.unactive,
+.casual .starter_line_wide_task.task16.unactive
+.starter_line_wide_task_image{background-position:-280px -630px}.casual_level{position:absolute;left:5px;top:5px;font-weight:700;color:#fff}.casual_avatar{line-height:69px;font-size:18px;color:#fff;box-shadow:inset 0 0 0 1px rgba(0,0,0,.1);text-align:center;text-indent:-1px}.casual_avatar.locked
+span{position:absolute;display:block;left:0;top:0;right:0;bottom:0}.casual_avatar.locked
+img{opacity: .5}.casual_avatar1.locked
+span{background:url(/images/items/lock1.png) no-repeat center !important}.casual_avatar2.locked
+span{background:url(/images/items/lock2.png) no-repeat center !important}.casual_avatar3.locked
+span{background:url(/images/items/lock3.png) no-repeat center !important}.casual_avatar4.locked
+span{background:url(/images/items/lock4.png) no-repeat center !important}.casual_avatar5.locked
+span{background:url(/images/items/lock5.png) no-repeat center !important}

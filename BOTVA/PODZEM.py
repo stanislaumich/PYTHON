@@ -103,8 +103,9 @@ def main():
             for elz in elements:
                 cnt = cnt + 1
                 ts = elz.text
+                print(ts)
                 ts = ts.replace("...", "%")
-                sql_select_query = """select nik from klan where nik like ?"""
+                sql_select_query = """select nik from voin where nik like ?"""
                 cursor.execute(sql_select_query, (ts,))
                 record = cursor.fetchone()
                 ts = record[0].upper()

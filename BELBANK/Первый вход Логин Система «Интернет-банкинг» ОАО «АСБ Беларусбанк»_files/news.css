@@ -1,0 +1,129 @@
+.jcarousel-wrapper {
+	margin: 20px auto 40px auto;
+	position: relative;
+}
+
+/** Carousel **/
+.jcarousel {
+	position: relative;
+	overflow: hidden;
+	width: 568px;
+	height: 120px;
+}
+
+.jcarousel ul {
+	width: 20000em;
+	position: relative;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.jcarousel li {
+	float: left;
+	width: 275px;
+	background: #52ae41;
+	border-bottom: 5px #018435 solid;
+	margin-right: 18px;
+	cursor: pointer;
+}
+
+.jcarousel li img {
+	width: 112px;
+	height:112px;
+	float: left;
+	margin: 3px 7px 0 3px;
+}
+
+.jcarousel h3 {
+	padding: 6px 0 10px 0;
+}
+
+.jcarousel h3 a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 14px;
+}
+
+.jcarousel p {
+	color: #fff;
+	font-size: 12px;
+	line-height: 14px;
+}
+
+/** Carousel Controls **/
+.jcarousel-control-prev,.jcarousel-control-next {
+	position: absolute;
+	display: block;
+	width: 30px;
+	height: 31px;
+	top: 50px;
+	background: url(../images/news02.png) no-repeat;
+}
+
+.jcarousel-control-prev {
+	background-position: left top;
+	left: -42px;
+}
+
+.jcarousel-control-next {
+	background-position: right top;
+	right: -42px;
+}
+
+.jcarousel-control-prev:hover {
+	background-position: left bottom;
+}
+
+.jcarousel-control-prev.inactive:hover {
+	background-position: left top;
+}
+
+.jcarousel-control-next:hover {
+	background-position: right bottom;
+}
+
+.jcarousel-control-next.inactive:hover {
+	background-position: right top;
+}
+
+.jcarousel-control-prev:hover span,
+.jcarousel-control-next:hover span {
+	display: block;
+}
+
+.jcarousel-control-prev.inactive,
+.jcarousel-control-next.inactive {
+	/*opacity: .5;*/
+	cursor: default;
+}
+
+/** Carousel Pagination **/
+.jcarousel-pagination {
+	position: absolute;
+	bottom: -27px;
+	left: 0px;
+}
+
+.jcarousel-pagination a {
+	text-decoration: none;
+	display: inline-block;
+	font-size: 11px;
+	line-height: 10px;
+	min-width: 10px;
+	min-height: 10px;
+	background: #c9c8c8;
+	color: #4E443C;
+	/*border-radius: 14px;*/
+	padding: 3px;
+	text-align: center;
+	margin-right: 2px;
+	opacity: .75;
+}
+
+.jcarousel-pagination a.active {
+	background: #52ae41;
+	color: #fff;
+	opacity: 1;
+	/*text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.75);*/
+}

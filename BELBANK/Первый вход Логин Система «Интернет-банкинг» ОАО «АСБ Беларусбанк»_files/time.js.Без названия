@@ -1,0 +1,81 @@
+var checked = 0; // выполнялась ли проверка браузера
+var fulltime = 10; //минут
+fulltime = fulltime*60;
+var divobj = new Object;
+var timerID = 'timer';
+var logoutObj = new Object;
+var logoutID = 'portalLogoutLink';
+var uri = 'https://ibank.asb.by/wps/portal/ibank/';
+var tid = 0;
+
+function timer() {
+	if (checked < 2) {
+		if (dom)
+			divobj = document.getElementById(timerID);
+		else
+			divobj = document.all[timerID];
+
+		checked = 2;
+	}
+	
+	var txt = timerformat(fulltime);
+	divobj.innerHTML = txt;
+	fulltime = fulltime - 1;
+	if (fulltime < 0) {
+		if (dom)
+			logoutObj = document.getElementById(logoutID);
+		else
+			logoutObj = document.all[logoutID];
+
+		clearTimeout(tid);
+		//document.location.href = (logoutObj) ? logoutObj.getAttribute("href") : uri;
+		window.location.href = (logoutObj) ? logoutObj.getAttribute("href") : uri;
+	}
+	tid = setTimeout(timer, 1000);
+}
+/* проверка параметров браузера */
+function lib_bwcheck() {
+    if (!checked) {
+    	this.ver=navigator.appVersion; this.agent=navigator.userAgent;
+    	this.dom=document.getElementById?1:0;
+    	this.ie5=(this.ver.indexOf("MSIE 5")>-1 && this.dom)?1:0;
+    	this.ie6=(this.ver.indexOf("MSIE 6")>-1 && this.dom)?1:0;
+    	this.ie4=(document.all && !this.dom)?1:0;
+    	this.ies=(this.ie4||this.ie5||this.ie6);
+    	this.mac=this.agent.indexOf("Mac")>-1;
+    	this.opera5=this.agent.indexOf("Opera 5")>-1;
+    	this.ns6=(this.dom && parseInt(this.ver) >= 5) ?1:0; 
+    	this.ns4=(document.layers && !this.dom)?1:0;
+    	this.bw=(this.ie6 || this.ie5 || this.ie4 || this.ns4 || this.ns6 || this.opera5 || this.dom);
+    	this.oldb=(this.ie4||this.ns4)?1:0;
+        checked = 1;
+        return this;
+    }
+}
+lib_bwcheck();
+function timerformat (n) {
+	var txt = '';
+	var m = n/60;
+	var mi = m;
+	var s = 0;
+	var H = 0;
+	var Hu = 0;
+    var reg = /^(\d+)(\.)(\d+)$/;
+    mi = mi.toString();
+    if (reg.test(mi)) m = mi.replace(reg, "$1");
+    s = n-(m*60);
+    if (s == 0) s = '00';
+    else if (s < 10) s = '0'+s;
+    txt = s;
+    if (m > 60) {
+		Hu = m/60;
+		Hu = Hu.toString();
+		if (reg.test(Hu)) H = Hu.replace(reg, "$1");
+		m = m - (H*60);
+	}
+	if (m == 0) m = '00';
+	else if (m < 10) m = '0'+m;
+	txt = m+':'+txt;
+	if (H > 0) txt = H+':'+txt;
+	return txt;
+}

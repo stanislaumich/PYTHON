@@ -1,0 +1,93 @@
+body{top:0 !important}.bgmain{top:0 !important;padding-top:30px}#container{margin-top:0 !important}DIV.restart{margin:0
+!important}#content-container
+#menu{height:500px !important;background:url(/i/inside/inlmenu12.png) no-repeat top left !important}.tutorial_area, .tutorial_area .arrow, .tutorial_area
+.arrow_text{z-index:1000 !important}.tutorial_area.higher, .tutorial_area.higher .arrow, .tutorial_area.higher
+.arrow_text{z-index:10001 !important}DIV#online
+#time{color:#fff}#top_menu .logo, #top_menu
+.logo2{background-image:url(/i/inside/inlogo_avatar.png) !important}.top_stats_avatar{}#top_menu
+.char_stat{position:absolute;left:90px;top:0}#top_menu
+.char_stat.char_stat_energy{left:auto;right:35px}.top_money_avatar{margin:0
+auto;min-width:582px;width:582px;left:0;right:0}.top_money_avatar
+.money{background-position:0 -480px;width:112px}.top_money_avatar
+#crystal{background-position:-195px -480px}.top_money_avatar
+#green{background-position:-390px -480px}.top_money_avatar
+A{margin-left:91px}.top_money_avatar .money
+span{width:134px}.top_money_avatar
+.safe{width:110px;background-position:-760px -177px}.top_money_avatar .safe
+B{background-position:0 -54px}.top_money_avatar .safe
+B.safe_1{background-position:0 -63px}.notices_block{margin-top:70px}.avatar_rating_enemy{margin:0
+3px;padding:5px;width:116px;background-color:#96CD66;border-radius:3px;display:inline-block;position:relative;overflow:hidden;text-decoration:none}.avatar_rating_enemy .bordert,
+.avatar_rating_enemy
+.borderb{border-color:#76AB48}.avatar_rating_enemy
+.avatar{border-radius:3px;overflow:hidden}.avatar_rating_enemy
+.avatar_rating_enemy_stat{opacity: .8}.avatar_rating_enemy:hover
+.avatar_rating_enemy_stat{opacity:1}.avatar_rating_enemy
+.name{margin:2px
+0 3px;width:116px;white-space:nowrap;overflow:hidden}.avatar_rating_enemy_stat>div{width:71px;overflow:hidden;white-space:nowrap}.avatar_rating_enemy_action{position:absolute;left:0;right:0;top:25px;bottom:0;border-radius:3px;background:rgba(0,0,0,.5);text-align:center;line-height:68px;color:#fff;text-transform:uppercase;font-weight:bold;font-size:16px;display:none}.avatar_rating_enemy_action.active{cursor:pointer}.avatar_rating_enemy:hover
+.avatar_rating_enemy_action{display:block}.avatar_watch
+.red_line{text-indent:1.5em}.avatar_watch
+.red_line_watch{text-indent:60px;margin-top:5px}.avatar_watch
+.sub_title{text-align:center;margin-top:0;height:30px;position:relative}.avatar_watch .sub_title_other
+input{margin:0
+3px 0 5px !important;top:auto !important;bottom:-3px;display:inline-block}.avatar_watch
+.group_title_image{position:absolute;width:60px;height:60px;top:-30px;left:15px}.avatar_watch
+.title_img_1{background-image:url('/images/packs/ico_dozor.png');background-position:0 0}.avatar_watch
+.title_img_1_h{background-image:url('/images/packs/ico_dozor.png');background-position:-300px 0}.avatar_watch
+.title_img_2_s{background-image:url('/images/packs/ico_dozor.png');background-position:-180px 0}.avatar_watch
+.title_img_2_b{background-image:url('/images/packs/ico_dozor.png');background-position:-240px 0}.avatar_watch
+.title_img_3{background-image:url('/images/packs/ico_dozor.png');background-position:-60px 0}.avatar_watch
+.title_img_4{background-image:url('/images/packs/ico_dozor.png');background-position:-120px 0}.avatar_watch
+.icon_sleep{background-image:url('/images/packs/ico_zzz.png');background-position:0 0;width:60px;height:30px}.avatar_watch
+.mini.icon_sleep{display:none}.avatar_watch
+#type{width:145px;position:absolute;top:1px;left:0;height:28px;border-color:#D6C29D;border-style:inset;text-align:center}.avatar_watch
+#level{width:165px;position:absolute;top:1px;left:0;height:28px;border-color:#D6C29D;border-style:inset;text-align:center}.avatar_watch
+#name{width:137px;position:absolute;top:1px;left:0;height:20px;border-color:#D6C29D;border-style:inset;color:#999;text-align:center}.avatar_watch
+#name_zorro{width:138px;position:absolute;top:1px;left:0;height:20px;border-color:#D6C29D;border-style:inset;color:#999;text-align:center}.avatar_watch
+#min{margin:0
+3px;width:28px;height:20px;border-color:#D6C29D;border-style:inset;text-align:center;font-weight:bold}.avatar_watch
+#max{margin:0
+3px;width:28px;height:20px;border-color:#D6C29D;border-style:inset;text-align:center;font-weight:bold}.avatar_watch
+.select_auto_watch{width:145px !important;top:1px !important;height:28px !important}.avatar_watch
+.watch_attack_type{width:100%;height:30px;margin-top:10px;position:relative}.avatar_watch
+.watch_attack_name{width:100%;height:30px;margin-top:10px;position:relative}.avatar_watch
+.watch_attack_level{width:100%;height:30px;margin-top:10px;position:relative}.avatar_watch
+.watch_attack_levels{width:143px;position:absolute;top:1px;left:5px;text-align:right}.avatar_watch
+.watch_no_attack{height:80px;vertical-align:middle;padding-top:30px}.avatar_watch
+.watch_no_monster{height:70px;vertical-align:middle;padding-top:40px}.avatar_watch
+#watch_watch_select{width:100%;height:30px;margin-top:10px;position:relative}.avatar_watch
+#watch_watch_reset{width:100%;height:30px;margin-top:10px;position:relative}.avatar_watch
+#auto_watch{width:155px;position:absolute;top:5px;left:0;height:20px;border-style:inset;border-color:#D6C29D;text-align:center}.avatar_watch
+#watch_watch_time_left{margin-top:8px;margin-bottom:10px}.avatar_watch
+#watch_zorro_no_mask{height:30px;vertical-align:middle;padding-top:40px}.avatar_watch
+.watch_watch_price{width:150px;position:absolute;left:5px;top:4px}.avatar_watch .watch_watch_price
+input{margin:0
+3px 0 5px !important;top:auto !important;bottom:0;display:inline-block}.avatar_watch
+.watch_result{margin-top:15px}.avatar_watch
+.flright{float:right;text-align:right}.avatar_watch
+.margin_sub_title{margin-top:10px}.avatar_watch
+.margin_sub_title2{margin-top:8px}.money_dark_gold{background-image:url(/images/items/Smith_2s.jpg)}.avatar_mine
+.red_line_mine{text-indent:55px}.avatar_mine
+.group_title_image{position:absolute;width:60px;height:60px;top:-30px;left:5px}.potion_energy{background-position:-441px -581px}.avatar_path_image_container
+.iviewer_cursor{cursor:url(/images/m/avatar/hand.cur) 6 8, pointer}.avatar_path_image_container
+.iviewer_drag_cursor{cursor:url(/images/m/avatar/grab.cur) 6 8, pointer}.avatar_energy_buy
+.title_popup{text-align:center}.avatar_energy_buy
+.box_layout{background:url(/images/m/avatar/energy_buy_popup.jpg)}.avatar_energy_buy2
+.box_layout{background:url(/images/m/avatar/avatar_energy_buy2.jpg)}.avatar_energy_buy2
+.confirm_content_box{height:147px}.avatar_energy_buy2
+.box_controls{position:relative;top:103px}.avatar_energy_buy .box_title_wrap,
+.avatar_energy_buy .box_title,
+.avatar_energy_buy .box_body,
+.avatar_energy_buy
+.box_controls{background:none;border:0;color:#fff}.avatar_energy_buy
+.box_x_button{display:none}.avatar_energy_buy
+.bgr_2.lborder{margin-top:74px;background-color:rgba(255, 255, 255, .4);border:1px
+solid rgba(255,255,255,.5)}.shake{-webkit-animation:shake linear .5s;-moz-animation:shake linear .5s;-o-animation:shake linear .5s;animation:shake linear .5s}.avatar_watch_mine_block{background:url(/images/m/avatar/green.jpg) center center}.avatar_mine_watch_block .bgr_white,
+.avatar_watch_mine_block
+.bgr_white{background:rgba(255,255,255,.5)}.avatar_mine_watch_block
+.border{border-color:rgba(255,255,255,.5) !important}.avatar_watch_mine_block
+*{border-color:rgba(255,255,255,.5)}.avatar_mine_watch_block{background:url(/images/m/avatar/red.jpg) center center}@-webkit-keyframes
+shake{0%{-webkit-transform:translateX(-15px)}20%{-webkit-transform:translateX(15px)}40%{-webkit-transform:translateX(-15px)}60%{-webkit-transform:translateX(15px)}80%{-webkit-transform:translateX(-15px)}100%{-webkit-transform:translateX(0)}}@-moz-keyframes
+shake{0%{-moz-transform:translateX(-15px)}20%{-moz-transform:translateX(15px)}40%{-moz-transform:translateX(-15px)}60%{-moz-transform:translateX(15px)}80%{-moz-transform:translateX(-15px)}100%{-moz-transform:translateX(0)}}@-o-keyframes
+shake{0%{-o-transform:translateX(-15px)}20%{-o-transform:translateX(15px)}40%{-o-transform:translateX(-15px)}60%{-o-transform:translateX(15px)}80%{-o-transform:translateX(-15px)}100%{-o-transform:translateX(0)}}@keyframes
+shake{0%{transform:translateX(-15px)}20%{transform:translateX(15px)}40%{transform:translateX(-15px)}60%{transform:translateX(15px)}80%{transform:translateX(-15px)}100%{transform:translateX(0)}}#post_groups>div#post_group_all_avatar{background-position:0 0}#post_groups>div#post_group_all_avatar.current{background-position:0 -50px}#post_groups>div#post_group_1_avatar{background-position:-50px 0}#post_groups>div#post_group_1_avatar.current{background-position:-50px -50px}#post_groups>div#post_group_2_avatar{background-position:-100px 0}#post_groups>div#post_group_2_avatar.current{background-position:-100px -50px}#post_groups>div#post_group_3_avatar{background-position:-150px 0}#post_groups>div#post_group_3_avatar.current{background-position:-150px -50px}#post_groups>div#post_group_4_avatar{background-position:-550px 0}#post_groups>div#post_group_4_avatar.current{background-position:-550px -50px}#post_groups>div#post_group_5_avatar{background-position:-250px 0}#post_groups>div#post_group_5_avatar.current{background-position:-250px -50px}#post_groups>div#post_group_6_avatar{background-position:-300px 0}#post_groups>div#post_group_6_avatar.current{background-position:-300px -50px}#post_groups>div#post_group_7_avatar{background-position:-350px 0}#post_groups>div#post_group_7_avatar.current{background-position:-350px -50px}#post_groups>div#post_group_8_avatar{background-position:-400px 0}#post_groups>div#post_group_8_avatar.current{background-position:-400px -50px}#post_groups>div#post_group_19_avatar{background-position:-450px 0}#post_groups>div#post_group_19_avatar.current{background-position:-450px -50px}#post_groups>div#post_group_45_avatar{background-position:-500px 0}#post_groups>div#post_group_45_avatar.current{background-position:-500px -50px}.ability_price{padding-top:7px;width:90px;font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:inline-block}.fight_monster_block{position:relative}.fight_monster_block
+.button_solid{position:absolute;left:-1px;bottom:-1px;right:-1px}.fight_monster_finished{position:absolute;left:-1px;right:-1px;top:-1px;bottom:-1px;background-color:rgba(0,0,0,.7);border-radius:3px;line-height:108px;text-align:center;font-size:18px;z-index:5}.fight_monster_finished.green{color:#08d603}.fight_monster_finished.red{color:#ff3030}.group_title_image+.group_title_image{left:auto;right:-6px;top:-18px}.trigger_mode_active{box-shadow:0 0 0 2px greenyellow}.watch_mode{display:none}.watch_mode.active{display:block}.trigger_mode{cursor:pointer}.trigger_mode:hover{filter:brightness(110%)}
