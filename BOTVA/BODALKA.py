@@ -5,11 +5,10 @@ import os
 from selenium.webdriver.common.by import By
 import configparser
 from selenium import webdriver
+import mysettings
 ''''''
 uagent = ""
 def main():
-    config = configparser.ConfigParser()  # создаём объекта парсера
-    config.read("config.ini")  # читаем конфиг
     basepath = config["PATH"]["workdir"]
     try:
         os.mkdir(basepath)
@@ -31,9 +30,9 @@ def main():
     element = driver.find_element(By.CLASS_NAME, "sign_in")
     element.click()
     element = driver.find_element("name", "email")
-    element.send_keys(config["LOGIN"]["username"])
+    element.send_keys(mysettings.login)
     element = driver.find_element("name", "password")
-    element.send_keys(config["LOGIN"]["password"])
+    element.send_keys(mysettings.passw)
     element = driver.find_element(By.CLASS_NAME, "submit_by_ajax_completed")
     element.submit()
     sleep(3)
