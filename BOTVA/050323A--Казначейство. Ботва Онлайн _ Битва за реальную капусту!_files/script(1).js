@@ -1,0 +1,2 @@
+function mapTutorialHandler(){var t={};t.init=function(){$('#show_map_popup').on('click',function(){t.showPopup();});};t.hideArrows=function(){$('.tutorial_area').hide();};t.showArrows=function(){$('.tutorial_area').show();};t.showPopup=function(){lAlert({title:'<div class=center>'+map_tutorial_popup_title+'</div>',from_url:'/ajax.php?m=map_tutorial_popup',width:560})};return t;}
+MAPTUTOR=mapTutorialHandler();

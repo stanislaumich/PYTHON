@@ -1,0 +1,151 @@
+.tooltip {
+	position:relative;
+	padding: 0px;
+	float:right;
+}
+.question_info {
+	display:none;
+	position:absolute;
+	width:400px;
+	padding:20px;
+	text-align:left;
+	background:#fff;
+	border:1px #494949 solid;
+	font-weight: normal;
+	font-size:12px;
+	color: black;
+	z-index: 2;
+}
+.tooltip.infoActive_m .question_info {
+	display:block;
+}
+.tooltip.infoActive_c .question_info {
+	display:block;
+}
+.question_info a.close {
+	position:absolute;
+	top:0px;
+	right:0px;
+	font-size:14px;
+	padding: 3px 7px 5px 10px;
+	color:#333333;
+	font-weight:bold;
+	text-decoration:none;
+	font-family: Verdana;
+}
+.question_info p {
+	line-height:14px;
+	margin-bottom:8px;
+}
+a.question {
+	display:block;
+	width:36px;
+	height:29px;
+	font-size:20px;
+	color:#fff;
+	line-height:29px;
+	text-align:center;
+	text-decoration:none;
+	background:#35AAED;
+	border:none;
+	border-bottom:7px #258DCA solid;
+	margin-left:2px;
+}
+a.s_info {
+	display:block;
+	width:36px;
+	text-decoration:none;
+	text-align:center;
+	height:29px;
+	background:#35AAED;
+	border-bottom:7px #258DCA solid;
+	color:#fff;
+	font-size:18px;
+	line-height:29px;
+	font-weight:bold;
+}
+
+a.s_info_small {
+	display:block;
+	width:36px;
+	text-decoration:none;
+	text-align:center;
+	height:29px;
+	background:#35AAED;
+	border-bottom:7px #258DCA solid;
+	color:#fff;
+	font-size:18px;
+	line-height:29px;
+	font-weight:bold;
+}
+
+.infoPosition_tr {
+	top:0px;
+	right:38px;
+	bottom:auto;
+	left:auto;
+}
+
+.infoPosition_tl {
+	top:0px;
+	left:38px;
+	bottom:auto;
+	right:auto;
+}
+
+.infoPosition_bl {
+	bottom:0px;
+	left:38px;
+	top:auto;
+	right:auto;
+}
+
+.infoPosition_br {
+	bottom:0px;
+	right:38px;
+	top:auto;
+	left:auto;
+}
+
+
+/*ibhelp styles*/
+
+
+.ibhelp {
+	float: right;
+	position: relative;
+	z-index: 999;
+}
+.ibhelp .ibhelp_tooltip .ibhelp_s_info {
+	background: url("../images/help2.png") no-repeat scroll center center;
+	display: block;
+	height: 33px;
+	width: 28px;
+}
+.ibhelp .ibhelp_tooltip .ibhelp_s_info:hover {
+	background: url("../images/help5.png") no-repeat scroll center center;
+	cursor: pointer;
+}
+.ibhelp .ibhelp_tooltip .infoPosition_tr {
+	right: 30px;
+}
+.ibhelp .ibhelp_tooltip .question_info {
+	width: 500px;
+}
+.ibhelp .ibhelp_tooltip.infoActive_m .question_info,
+.ibhelp .ibhelp_tooltip.infoActive_c .question_info {
+	display:block;
+	overflow: auto;
+}
+.ibhelp .ibhelp_tooltip .close {
+	background: url("../images/close.png") no-repeat scroll center bottom;
+	display: block;
+	height: 10px;
+	width: 11px;
+}
+.ibhelp .ibhelp_tooltip .ibhelp_loading {
+	background: url("../images/loading4.gif") no-repeat scroll center center;
+	display: block;
+	height: 16px;
+	width: 100%;
+}

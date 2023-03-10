@@ -1,0 +1,228 @@
+var nf_format = Array();
+var SEPARATOR_TRIAD = ' ';
+var SEPARATOR_CARD = ' ';
+var SEPARATOR_DECIMAL = '.';
+var SEPARATOR_DECIMAL_RPL = ',';
+var ZERO_INT = '0';
+var ZERO_AMOUNT = '0.00';
+var AMOUNT_FIELD_LENGTH_MAX = 16;
+var NUMBER_FIELD_LENGTH_MAX = 9;
+var AMOUNT_INT_LENGTH_MAX = 10;
+var AMOUNT_FRACT_LENGTH_MAX = 2;
+
+jQuery(document).ready(function(){
+	jQuery(document).on('keyup change', '.ibAmount', function(event){
+		number_format(null, event, false);
+		return false;
+	});
+	jQuery(document).on('focus', '.ibAmount', function(event){
+		clearIfZero(event, false);
+		return false;
+	});
+	jQuery(document).on('blur', '.ibAmount', function(event){
+		setZeroIfWasZero(event, false);
+		return false;
+	});
+
+	jQuery(document).on('keyup change', '.ibIntNumber', function(event){
+		number_format(null, event, true);
+		return false;
+	});
+	jQuery(document).on('focus', '.ibIntNumber', function(event){
+		clearIfZero(event, true);
+		return false;
+	});
+	jQuery(document).on('blur', '.ibIntNumber', function(event){
+		setZeroIfWasZero(event, true);
+		return false;
+	});
+
+	jQuery(".ibAmount").attr('maxlength', AMOUNT_FIELD_LENGTH_MAX);
+	jQuery.each(jQuery('.ibIntNumber'), function (index, value){
+		var maxlength = jQuery(value).attr('maxlength');
+		if (!maxlength) jQuery(value).attr('maxlength', NUMBER_FIELD_LENGTH_MAX);
+	});
+});
+
+function number_format(elemId/*for support old version*/, evt, isInt, isCard) {
+	if (evt == null) evt = window.event;
+
+	if (!checkKeyCodesForNumber(evt)) return true;
+	
+	var elem = null;
+	if (elemId) elem = document.getElementById ? document.getElementById(elemId) : document.all ? document.all.elemId : document.elemId;
+	if (!elem && evt) elem = getElemFromEvent(evt);
+	if (!elem) return true;
+	
+	var number = elem.value;
+	if (typeof(number) == 'undefined' || number == '') return;
+
+	var cursorPosition = getCursorPosition(elem);
+	var numberLength = number.length;
+	
+	number = replaceIllegalSymbolsForNumber(number, isInt);
+
+	if (isCard) {
+		number = formatCard(number);
+	} else {
+		number = formatNumber(number, isInt);
+	}
+	
+	elem.value = number;
+
+	setCursorPosition(elem, cursorPosition + number.length - numberLength);
+
+	//nf_format[elemId] = 1;
+	return true;
+};
+
+function getElemFromEvent(evt) {
+	return evt && evt.target ? evt.target : (evt && evt.srcElement ? evt.srcElement : null);
+};
+
+function checkKeyCodesForNumber(evt) {
+	var code = null;
+	if (evt && evt.keyCode) {
+		code = evt.keyCode;
+	} else if (evt && evt.which) {
+		code = evt.which;
+	}
+	//return if end, home, left, up, right, down, shift, ctrl
+	if (code >= 35 && code <=40 || code == 16 || code == 17) {
+		return false;
+	}
+	return true;
+};
+
+function replaceIllegalSymbolsForNumber(number, isInt) {
+	if (isInt) {
+		regex = new RegExp('[^\\d]', 'g');
+		while (regex.test(number)) number = number.replace(regex, "");
+		return number;
+	}
+
+	var regex = new RegExp(SEPARATOR_DECIMAL_RPL, 'g');
+	while (regex.test(number)) number = number.replace(regex, SEPARATOR_DECIMAL);
+	
+	while (number.indexOf(SEPARATOR_DECIMAL) !== number.lastIndexOf(SEPARATOR_DECIMAL)){
+		var lastIndex = number.lastIndexOf(SEPARATOR_DECIMAL);
+		number = number.slice(0, lastIndex) + number.slice(lastIndex + 1);
+	}
+	
+	regex = new RegExp('[^\\d' + SEPARATOR_DECIMAL + ']', 'g');
+	while (regex.test(number)) number = number.replace(regex, "");
+
+	return number;
+};
+
+function formatNumber(number, isInt) {
+	var amountPartArr = number.split('.');
+	var partInt = amountPartArr.length > 0 ? amountPartArr[0] : '';
+	if (!isInt) {
+		if (partInt.length > (AMOUNT_INT_LENGTH_MAX)) partInt = partInt.substring(0, AMOUNT_INT_LENGTH_MAX);
+	}
+	var partFract = amountPartArr.length > 1 ? SEPARATOR_DECIMAL + amountPartArr[1] : '';
+	if (partFract.length > (AMOUNT_FRACT_LENGTH_MAX + 1)) partFract = partFract.substring(0, AMOUNT_FRACT_LENGTH_MAX + 1);
+	var regex = /(\d+)(\d{3})/;
+	while (regex.test(partInt)) partInt = partInt.replace(regex, '$1' + SEPARATOR_TRIAD + '$2');
+	number = partInt + partFract;
+	return number;
+};
+
+function formatCard(number) {
+	if (number.length > 16) number = number.substring(0, 16);
+	number = number.split("").reverse().join("");
+	var regex = /(\d+)(\d{4})/;
+	while (regex.test(number)) number = number.replace(regex, '$1' + SEPARATOR_CARD + '$2');
+	number = number.split("").reverse().join("");
+	return number;
+};
+
+function getCursorPosition(elem) {
+	var caretPos = 0;	
+	if (document.selection) { //IE Support
+		elem.focus();
+		var Sel = document.selection.createRange ();
+		Sel.moveStart ('character', -elem.value.length);
+		caretPos = Sel.text.length;
+	} else if (elem.selectionStart || elem.selectionStart == '0') { //Firefox support
+		caretPos = elem.selectionStart;
+	}
+	return caretPos;
+};
+
+function setCursorPosition(elem, pos){
+	if(elem.setSelectionRange){
+		elem.focus();
+		elem.setSelectionRange(pos,pos);
+	} else if (elem.createTextRange) {
+		var range = elem.createTextRange();
+		range.collapse(true);
+		range.moveEnd('character', pos);
+		range.moveStart('character', pos);
+		range.select();
+	}
+};
+
+function clearIfZero(evt, isInt){
+	var elem = getElemFromEvent(evt);
+	if (!elem) return;
+
+	if (isZero(elem, isInt)) {
+		elem.value = '';
+		elem.wasZero = '1';
+	} else {
+		elem.wasZero = '0';
+	}
+};
+
+function setZeroIfEmpty(evt, isInt){
+	var elem = null;
+	if (!elem && evt) elem = getElemFromEvent(evt);
+	if (!elem) return;
+	
+	if (isEmptyNumber(elem, isInt)) {
+		elem.value = isInt ? ZERO_INT : ZERO_AMOUNT;
+	}
+};
+
+function setZeroIfWasZero(evt, isInt){
+	var elem = getElemFromEvent(evt);
+	if (!elem) return;
+	
+	if (elem.wasZero == '1' && isEmptyNumber(elem, isInt)) {
+		elem.value = isInt ? ZERO_INT : ZERO_AMOUNT;
+	}
+};
+
+function isEmptyNumber(elem, isInt){
+	var number = elem.value;
+	number = replaceIllegalSymbolsForNumber(number, isInt);
+	return number == '';
+};
+
+function isZero(elem, isInt){
+	var number = elem.value;
+	number = replaceIllegalSymbolsForNumber(number, isInt);
+	if (number == '') return false;
+	return Number(number) == 0;
+};
+
+function unformat() {
+	var reg = /\s/;
+	var dom = document.getElementById?1:0;
+	var ie = (document.all)?1:0;
+	var obj;
+	var id = '';
+	var number = 0;
+
+	for (name in nf_format) {
+		id = name;
+		obj = (dom)?document.getElementById(id):ie?document.all.id:document.id;
+		number = obj.value;
+		while (reg.test(number))  number = number.replace(reg, "");
+		obj.value = number;
+	}
+
+	return true;
+};

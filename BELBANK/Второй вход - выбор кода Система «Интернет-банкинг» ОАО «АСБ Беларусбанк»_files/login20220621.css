@@ -1,0 +1,248 @@
+#login_in {
+padding:20px 0 20px 44px;
+background:#fff;
+border:1px #e0e0e0 solid;
+border-top:none;
+margin-bottom:12px;
+}
+#login_in.baseMode {
+width:328px;
+border:1px #e0e0e0 solid;
+}
+#login_in .loginForm {
+margin-top: 15px;
+}
+#login_in .input {
+width:414px;
+height:34px;
+padding:0 15px 0 47px;
+line-height:34px;
+border:1px #d1e7dc solid;
+background:#fafcfb url(images/login.png) no-repeat;
+font-size:18px;
+color:#595d5b;
+margin-bottom:20px;
+}
+#login_in > #unblockBySMS .input {
+margin-top: 6px;
+margin-bottom:15px;
+padding:0 15px 0 47px;
+width:414px;
+}
+#login_in.baseMode .input {
+width:220px;
+}
+#login_in #userID {background-position:15px -83px;}
+#login_in #password, #login_in #newPassword, #login_in #confirmNewPassword {background-position:15px -123px;}
+#login_in #userID:focus {background-position:15px -3px;}
+#login_in #password:focus, #login_in #newPassword:focus, #login_in #confirmNewPassword:focus {background-position:15px -43px;}
+#login_in #codevalue, #login_in #codeSMSvalue, #login_in #secretAnswerValue {
+width:446px;
+padding:0 15px;
+background:#fafcfb;
+}
+#login_in.baseMode #codevalue, 
+#login_in.baseMode #codeSMSvalue {
+width:252px;
+}
+#login_in .input:focus {
+border-color:#ffc000;
+box-shadow:0 0 3px rgba(255,192,0,0.7);
+}
+#login_in .button {
+height:36px;
+background:#52ae41;
+border:none;
+border-bottom:7px #018435 solid;
+border-right: 1px solid #4dad3a;
+border-left: 1px solid #4dad3a;
+border-top: 1px solid #4dad3a;
+font-size:14px;
+font-weight:bold;
+color:#fff;
+padding:0 20px;
+cursor: pointer;
+margin-bottom: 5px;
+}
+#login_in .button:hover{
+background:#63c323;
+border-bottom:7px #308f1b solid;
+}
+#login_in .input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #fafcfb inset;
+}
+#login_in p.code, #login_in span.code {
+font-size:18px;
+line-height:22px;
+font-weight:bold;
+color:#303030;
+white-space: nowrap;
+}
+#login_in > #unblockBySMS p.code, #login_in > #unblockBySMS span.code {
+font-size:14px;
+line-height:18px;
+}
+#login_in > #unblockBySMS span.code span.codeWordName {
+color: #303030;
+display: block;
+width: 480px;
+white-space: normal;
+}
+#login_in p.smsHeader {
+font-size:15px;
+line-height:18px;
+font-weight:bold;
+color:#303030;
+}
+#login_in p.code span, #login_in span.code span{
+color:#15814c;
+}
+#login_in p.t {
+font-size:16px;
+color:#303030;
+margin-bottom:12px;
+}
+#login_in .res p {
+font-family:Arial;
+font-size:16px;
+color:#303030;
+line-height:20px;
+}
+#login_in .res p.error {
+font-size:18px;
+font-weight:bold;
+color:#dc1010;
+margin-bottom: 10px;
+}
+#login_in #unblockBySMS .res p.error {
+margin-bottom: 5px;
+}
+::-webkit-input-placeholder {
+color: #b1b1b1;
+font-size:14px;
+}
+:-moz-placeholder { /* Firefox 18- */
+color: #b1b1b1;  
+font-size:14px;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+color: #b1b1b1; 
+font-size:14px; 
+}
+input:-ms-placeholder {
+color: #b1b1b1;
+font-size:14px;
+}
+::-ms-input-placeholder	{
+color: #b1b1b1;
+font-size:14px;
+}
+:-ms-input-placeholder {
+color: #b1b1b1;
+font-size:14px;
+}
+
+.confirmDialog {
+	position: absolute;
+	width: 350px;
+	border: solid 2px green;
+	display: none;
+	z-index: 999999997;
+	overflow: hidden;
+	background-color: #ffffff;
+	padding: 10px 10px 0px 10px;
+	left: 50%;
+	margin-left: -175px;
+	margin-top: -100px;
+}
+
+.confirmDialog .tabTop {
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.confirmDialog .warning{
+	background: transparent url("images/warning.png") center center no-repeat;
+	width: 16px;
+	height: 16px;
+	display: inline-block;
+}
+
+.confirmDialog .confirmMessage {
+	text-align: center;
+	padding-bottom: 15px;
+}
+
+.lockPanel {
+	position:absolute;
+	visibility:hidden;
+	top:0px;
+	left:0px;
+	width:100%;
+	height:100%;
+	background: transparent url("images/spacer.gif") center center no-repeat !important;
+	z-index:999999996;
+}
+#login_in .secondStepTypeSelection {
+	margin-left: 25px;
+}
+#login_in .secondStepTypeSelection td input[type="radio"] {
+	height:22px;
+	line-height:22px;
+	vertical-align: bottom;
+	margin: 0px;
+	padding: 0px;
+}
+#login_in .secondStepTypeSelection td label {
+	display: inline-block;
+	margin-left: 5px;
+	height:22px;
+	line-height:22px;
+	font-size:14px;
+	color:#595d5b;
+	margin: 0px 0px 0px 5px;
+	padding: 0px;
+}
+#login_in .password-eye {
+	background: transparent url("images/eye.png") center center no-repeat !important;
+}
+#login_in .password-eye-invisible {
+	background: transparent url("images/eye-invisible.png") center center no-repeat !important;
+}
+#login_in input[type="password"]:focus {
+    outline: none;
+}
+#login_in .inner-addon {
+    position: relative;
+    width: 478px;
+}
+#login_in .inner-addon .password-eye,
+#login_in .inner-addon .password-eye-invisible {
+  position: absolute;
+  top: 3px;
+  padding: 15px;
+  cursor: pointer;
+}
+#login_in .right-addon .password-eye,
+#login_in .right-addon .password-eye-invisible {
+	right: 10px;
+}
+#login_in .right-addon input {
+	padding-right: 47px;
+}
+#login_in .input-password {
+	width: 382px;
+}
+#login_in.baseMode .inner-addon {
+    width: 284px;
+}
+#login_in.baseMode .input-password {
+	width: 188px;
+	padding-right: 47px;
+}
+input[type=password]::-ms-reveal,input[type=password]::-ms-clear {
+    display: none;
+}
+#login_in .time_expired{
+	display:none;
+}
