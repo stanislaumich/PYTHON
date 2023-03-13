@@ -1,0 +1,21 @@
+pip install django
+
+django-admin startproject stasproj - общий проект джанго
+
+cd stasproj - чтобы быть рядом с manage и пометить корнем можно
+
+.\manage.py runserver
+
+.\manage.py migrate
+
+.\manage.py startapp page1 - это один блок джанго
+
+settings.py - installed apps - page1
+
+templates - index.html
+
+settings.py - templates   'DIRS': ['templates'],
+
+views.py - index_page
+
+urls.py - index_page
